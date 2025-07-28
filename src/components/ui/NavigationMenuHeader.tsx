@@ -1,4 +1,3 @@
-'use client';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from 'lucide-react';
@@ -54,6 +53,7 @@ export const NavigationMenuHeader = () => {
   return (
     <NavigationMenu viewport={false}>
       <NavigationMenuList>
+        {/** ホーム */}
         <NavigationMenuItem>
           <NavigationMenuTrigger>Home</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -85,6 +85,7 @@ export const NavigationMenuHeader = () => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {/** コンポーネント */}
         <NavigationMenuItem>
           <NavigationMenuTrigger>Components</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -101,6 +102,7 @@ export const NavigationMenuHeader = () => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {/** ドキュメント */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link to="/docs">Docs</Link>
@@ -139,6 +141,7 @@ export const NavigationMenuHeader = () => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {/** シンプルなリスト */}
         <NavigationMenuItem>
           <NavigationMenuTrigger>Simple</NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -157,6 +160,7 @@ export const NavigationMenuHeader = () => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        {/** アイコン付きリスト */}
         <NavigationMenuItem>
           <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
           <NavigationMenuContent>

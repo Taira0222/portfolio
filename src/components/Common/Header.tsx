@@ -47,7 +47,7 @@ export const Header = () => {
       {/* モバイルナビゲーション（md未満） */}
       <div
         className={cn(
-          'md:hidden flex justify-end p-4 fixed top-0 left-0 right-0 z-51 transition-colors duration-300',
+          'md:hidden flex justify-end p-4 fixed top-0 left-0 right-0 z-50 transition-colors duration-300',
           showMobileBg ? 'bg-white shadow-md' : 'bg-transparent'
         )}
       >

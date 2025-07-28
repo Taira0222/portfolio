@@ -9,7 +9,7 @@ export const Home = () => {
         <main className="flex-1">
           <Hero />
         </main>
-        <div className="h-1000" /> {/* フッターのスペース確保 */}
+        <div className="h-96" /> {/* フッターのスペース確保 */}
       </div>
     </>
   );
