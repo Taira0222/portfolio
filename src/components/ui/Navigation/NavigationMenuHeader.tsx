@@ -8,8 +8,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+} from '@/components/ui/Navigation/navigation-menu';
+import { navigationMenuTriggerStyle } from './navigationMenuTriggerStyle';
 
 const components: { title: string; to: string; description: string }[] = [
   {

@@ -1,29 +1,24 @@
 import { useEffect, useState } from 'react';
-import { MobileHamburgerMenu } from '../ui/MobileHamburgerMenu';
-import { NavigationMenuHeader } from '../ui/NavigationMenuHeader';
+import { MobileHamburgerMenu } from '../ui/Navigation/MobileHamburgerMenu';
+import { NavigationMenuHeader } from '../ui/Navigation/NavigationMenuHeader';
 import { cn } from '@/lib/utils';
 
 export const Header = () => {
   const [showHeader, setShowHeader] = useState(false);
   const [showMobileBg, setShowMobileBg] = useState(false);
+  const SCROLL_THRESHOLD = 100; // スクロールの閾値
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // デスクトップ用の動作（md以上）
-      // 2スクロール相当（100px）下げたら表示
-      if (currentScrollY > 100) {
+      // デスクトップ用の動作（md以上）と モバイル用の背景色変更（md未満）
+      // 2スクロール相当（SCROLL_THRESHOLD px）下げたら表示
+      if (currentScrollY > SCROLL_THRESHOLD) {
         setShowHeader(true);
-      } else {
-        setShowHeader(false);
-      }
-
-      // モバイル用の背景色変更（md未満）
-      // 2スクロール相当（100px）下げたら背景を白に
-      if (currentScrollY > 100) {
         setShowMobileBg(true);
       } else {
+        setShowHeader(false);
         setShowMobileBg(false);
       }
     };

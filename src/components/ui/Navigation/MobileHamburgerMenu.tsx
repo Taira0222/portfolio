@@ -1,5 +1,5 @@
 import { Menu } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from './sheet';
+import { Sheet, SheetContent, SheetTrigger } from '../sheet';
 import { Link } from 'react-router-dom';
 
 export const MobileHamburgerMenu = () => {
