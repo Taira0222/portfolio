@@ -1,5 +1,6 @@
 import { Header } from '../Common/Header';
 import { Hero } from './Hero';
+import { AboutMe } from './AboutMe';
 
 export const Home = () => {
   return (
@@ -8,6 +9,7 @@ export const Home = () => {
         <Header />
         <main className="flex-1">
           <Hero />
+          <AboutMe />
         </main>
         <div className="h-96" /> {/* フッターのスペース確保 */}
       </div>

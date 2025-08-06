@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "title": "Welcome to My Portfolio",
+    "subtitle": "Crafting digital experiences with passion and precision"
+  },
+  "about": {
+    "title": "About Me",
+    "name": "Taira",
+    "description": "As a frontend developer, I focus on creating user-centric web applications. I am passionate about building beautiful and functional interfaces using React, TypeScript, and the latest technologies."
+  }
+}
