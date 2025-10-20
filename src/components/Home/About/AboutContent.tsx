@@ -26,8 +26,8 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
         </h2>
       </div>
       <div className="space-y-4 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-loose">
-        {aboutParagraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+        {aboutParagraphs.map((paragraph, index) => (
+          <p key={`paragraph-${index}`}>{paragraph}</p>
         ))}
       </div>
     </motion.div>
