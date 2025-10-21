@@ -1,7 +1,10 @@
 import { Header } from '../Common/Header';
 import { Hero } from './Hero';
 import { About } from './About';
+
 import { TechStack } from './TechStack';
+import { Portfolio } from './Portfolio';
+
 
 export const Home = () => {
   return (
@@ -12,6 +15,7 @@ export const Home = () => {
           <Hero />
           <About />
           <TechStack />
+          <Portfolio />          
         </main>
         <div className="h-96" /> {/* フッターのスペース確保 */}
       </div>

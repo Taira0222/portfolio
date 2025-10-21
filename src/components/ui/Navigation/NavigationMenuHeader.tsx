@@ -85,6 +85,11 @@ export const NavigationMenuHeader = () => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link to="/#portfolio">Portfolio</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
         {/** コンポーネント */}
         <NavigationMenuItem>
           <NavigationMenuTrigger>Components</NavigationMenuTrigger>
