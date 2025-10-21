@@ -22,7 +22,7 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
           id="about-heading"
           className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl"
         >
-          ものづくりを通して、日常の体験を少し良くする
+          起業を経験しているプロダクト志向のエンジニア
         </h2>
       </div>
       <div className="space-y-4 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-loose">
