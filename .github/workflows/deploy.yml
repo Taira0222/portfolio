@@ -11,7 +11,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      VITE_BASE_URL: https://taira0222.github.io/portfolio/
+      VITE_BASE_URL: /portfolio/
     steps:
       - uses: actions/checkout@v4
 
