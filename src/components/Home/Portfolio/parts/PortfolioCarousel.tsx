@@ -35,8 +35,8 @@ export const PortfolioCarousel = ({ items, variants }: PortfolioCarouselProps) =
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className={fadeEdgeClassName + ' left-0'} />
-        <div className={fadeEdgeClassName + ' right-0'} />
+        <div className={`${fadeEdgeClassName} left-0`} />
+        <div className={`${fadeEdgeClassName} right-0`} />
         <CarouselPrevious className="left-16 sm:left-20 md:left-28 z-20 opacity-0 transition-opacity group-hover:opacity-100" />
         <CarouselNext className="right-16 sm:right-20 md:right-28 z-20 opacity-0 transition-opacity group-hover:opacity-100" />
       </Carousel>
