@@ -39,8 +39,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'Juku Cloud',
     category: 'Web App',
     featured: true,
-    summary:
-      '個別指導塾の「特性共有・授業引継ぎ」を標準化するSaaS。',
+    summary: '個別指導塾の「特性共有・授業引継ぎ」を標準化するSaaS。',
     meta: {
       timeline: '2025',
       role: 'Founder・Full-stack・DevOps',
@@ -53,8 +52,16 @@ export const portfolioItems: PortfolioItem[] = [
     ],
     ctas: [
       { label: 'Live', href: 'https://www.juku-cloud.com', type: 'live' },
-      { label: 'Repo (Frontend)', href: 'https://github.com/taira0222/juku-cloud-frontend', type: 'repo' },
-      { label: 'Repo (Backend)', href: 'https://github.com/taira0222/juku-cloud-backend', type: 'repo' },
+      {
+        label: 'Repo (Frontend)',
+        href: 'https://github.com/taira0222/juku-cloud-frontend',
+        type: 'repo',
+      },
+      {
+        label: 'Repo (Backend)',
+        href: 'https://github.com/taira0222/juku-cloud-backend',
+        type: 'repo',
+      },
     ],
     image: {
       src: jukuCloudSvg,
@@ -102,11 +109,11 @@ export const portfolioItems: PortfolioItem[] = [
     ],
     ctas: [
       { label: 'Live', href: 'https://todo-rails-application.onrender.com/', type: 'live' },
-      { label: 'Repo', href: 'https://github.com/Taira0222/todo-rails-application', type: 'repo' }
+      { label: 'Repo', href: 'https://github.com/Taira0222/todo-rails-application', type: 'repo' },
     ],
     image: {
       src: todoAppSvg,
-      alt: 'Rails で実装されたれた Todo アプリ',
+      alt: 'Rails で実装された Todo アプリ',
     },
   },
   {
@@ -126,7 +133,11 @@ export const portfolioItems: PortfolioItem[] = [
     ],
     ctas: [
       { label: 'Article (Profile)', href: 'https://qiita.com/taira0222', type: 'article' },
-      { label: '1年間毎日投稿達成', href: 'https://qiita.com/Taira0222/items/c8ce0989bb048941e0ef', type: 'article' },
+      {
+        label: '1年間毎日投稿達成',
+        href: 'https://qiita.com/Taira0222/items/c8ce0989bb048941e0ef',
+        type: 'article',
+      },
     ],
     image: {
       src: qiitaLogoSvg,
@@ -151,7 +162,11 @@ export const portfolioItems: PortfolioItem[] = [
     ],
     ctas: [
       { label: 'Repo', href: 'https://github.com/Taira0222/qiita-content', type: 'repo' },
-      { label: 'Article', href: 'https://qiita.com/Taira0222/items/857177b14f469040d874', type: 'article' },
+      {
+        label: 'Article',
+        href: 'https://qiita.com/Taira0222/items/857177b14f469040d874',
+        type: 'article',
+      },
     ],
     image: {
       src: gitHubLogoSvg,

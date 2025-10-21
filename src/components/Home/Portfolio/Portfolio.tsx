@@ -16,7 +16,8 @@ export const Portfolio = () => {
       className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/5 to-background py-20"
       aria-labelledby="portfolio-heading"
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
       <div className="pointer-events-none absolute inset-x-4 top-8 h-24 rounded-full bg-primary/5 blur-3xl dark:bg-primary/10" />
       <div className="container relative mx-auto max-w-6xl px-6 md:px-10">
