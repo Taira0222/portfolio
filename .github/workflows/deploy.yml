@@ -10,6 +10,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      VITE_BASE_URL: https://taira0222.github.io/portfolio/
     steps:
       - uses: actions/checkout@v4
 
@@ -17,11 +19,13 @@ jobs:
         with:
           node-version: 20
 
+      # Viteの環境変数をセット
+      - name: Export Vite envs to GitHub Actions
+        run: |
+          echo "VITE_BASE_URL=${{ env.VITE_BASE_URL }}" >> $GITHUB_ENV
+
       - run: npm ci
       - run: npm run build
-
-      # React Routerを使っているので404.htmlを用意する
-      - run: cp dist/index.html dist/404.html
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
