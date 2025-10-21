@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import { TechStackCard } from './TechStackCard';
+import { TechStackCard } from './parts/TechStackCard';
 import { techStack } from './data';
 
 export const TechStack = () => {
