@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/carousel';
 
 import type { PortfolioItem } from '../constants/data';
-import { PortfolioCard } from './PortfolioCard';
+import { PortfolioCard } from './Cards/PortfolioCard';
 
 type PortfolioCarouselProps = {
   items: PortfolioItem[];
@@ -17,6 +17,8 @@ type PortfolioCarouselProps = {
 };
 
 export const PortfolioCarousel = ({ items, variants }: PortfolioCarouselProps) => {
+  const fadeEdgeClassName =
+    'pointer-events-none absolute inset-y-0 z-10 w-12 sm:w-16 md:w-24 bg-background';
   return (
     <motion.div className="mt-14" variants={variants}>
       <Carousel
@@ -33,14 +35,10 @@ export const PortfolioCarousel = ({ items, variants }: PortfolioCarouselProps) =
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 sm:w-16 md:w-24 bg-background" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 sm:w-16 md:w-24 bg-background" />
-        <CarouselPrevious
-          className="left-16 sm:left-20 md:left-28 z-20 opacity-0 transition-opacity group-hover:opacity-100"
-        />
-        <CarouselNext
-          className="right-16 sm:right-20 md:right-28 z-20 opacity-0 transition-opacity group-hover:opacity-100"
-        />
+        <div className={fadeEdgeClassName + ' left-0'} />
+        <div className={fadeEdgeClassName + ' right-0'} />
+        <CarouselPrevious className="left-16 sm:left-20 md:left-28 z-20 opacity-0 transition-opacity group-hover:opacity-100" />
+        <CarouselNext className="right-16 sm:right-20 md:right-28 z-20 opacity-0 transition-opacity group-hover:opacity-100" />
       </Carousel>
     </motion.div>
   );
