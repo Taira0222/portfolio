@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { ChevronsDown } from 'lucide-react';
-import { HERO_EASING, KEYWORD_DELAY_BASE } from '../constants';
-import { KEYWORD_TOKENS, type KeywordToken } from '../tokens';
-import { keywordContainerVariants, keywordSharedAnimation } from '../variants';
+import { HERO_EASING, KEYWORD_DELAY_BASE } from '../../constants';
+import { KEYWORD_TOKENS, type KeywordToken } from '../../tokens';
+import { keywordContainerVariants, keywordSharedAnimation } from '../../variants';
+import { KeywordLabel } from './KeywordLabel';
 
 type HeroKeywordsProps = {
   onScrollToAbout: () => void;
@@ -10,7 +11,7 @@ type HeroKeywordsProps = {
 
 export const HeroKeywords = ({ onScrollToAbout }: HeroKeywordsProps) => (
   <motion.div
-    className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-semibold uppercase tracking-[0.38em] text-primary/80 md:text-base"
+    className="mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-center gap-y-2 text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-primary/80 sm:gap-x-5 sm:text-xs md:text-base md:tracking-[0.38em]"
     variants={keywordContainerVariants}
     initial="initial"
     animate="animate"
@@ -19,19 +20,15 @@ export const HeroKeywords = ({ onScrollToAbout }: HeroKeywordsProps) => (
   </motion.div>
 );
 
-const renderToken = (
-  token: KeywordToken,
-  index: number,
-  onScrollToAbout: () => void
-) => {
+const renderToken = (token: KeywordToken, index: number, onScrollToAbout: () => void) => {
   if (token.type === 'word') {
     return (
       <motion.span
-        key={`${token.label}-${index}`}
+        key={`${token.label.label}-${index}`}
         {...keywordSharedAnimation(index)}
-        className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/10 px-5 py-2 tracking-[0.28em] leading-none backdrop-blur"
+        className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/10 px-2 py-1.5 text-[0.70rem] tracking-[0.28em] leading-none backdrop-blur sm:px-5 sm:py-2 sm:text-xs md:text-sm"
       >
-        {token.label}
+        <KeywordLabel entry={token.label} />
       </motion.span>
     );
   }
@@ -42,7 +39,7 @@ const renderToken = (
       <motion.span
         key={`${token.type}-${index}`}
         {...keywordSharedAnimation(index)}
-        className={`inline-flex items-center justify-center px-1 md:text-lg ${textClass}`}
+        className={`inline-flex items-center justify-center px-1 text-[0.7rem] sm:text-sm md:text-lg ${textClass}`}
       >
         {token.label}
       </motion.span>
@@ -70,7 +67,7 @@ const renderToken = (
       className="inline-flex items-center justify-center text-primary/80 transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary cursor-pointer"
       aria-label={token.ariaLabel}
     >
-      <ChevronsDown className="h-7 w-7 md:h-9 md:w-9" aria-hidden="true" />
+      <ChevronsDown className="h-6 w-6 sm:h-7 sm:w-7 md:h-9 md:w-9" aria-hidden="true" />
     </motion.button>
   );
 };

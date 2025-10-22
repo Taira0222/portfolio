@@ -1,17 +1,35 @@
 import { HERO_KEYWORDS } from './constants';
 
-export type KeywordToken =
-  | { type: 'word'; label: string }
+type KeywordEntry = {
+  label: string;
+  mobileLabel?: string;
+};
+
+type KeywordToken =
+  | { type: 'word'; label: KeywordEntry }
   | { type: 'separator'; label: string }
   | { type: 'equals'; label: string }
   | { type: 'result'; ariaLabel: string };
 
-export const createKeywordTokens = (): KeywordToken[] => {
+const KEYWORD_ENTRIES: KeywordEntry[] = HERO_KEYWORDS.map((keyword) => {
+  switch (keyword) {
+    case 'Civil Eng':
+      return { label: 'Civil Eng', mobileLabel: 'Civil' };
+    case 'Edu':
+      return { label: 'Edu' };
+    case 'Software Eng':
+      return { label: 'Software Eng', mobileLabel: 'Software' };
+    default:
+      return { label: keyword };
+  }
+});
+
+const createKeywordTokens = (): KeywordToken[] => {
   const tokens: KeywordToken[] = [];
 
-  HERO_KEYWORDS.forEach((keyword, index) => {
-    tokens.push({ type: 'word', label: keyword });
-    if (index < HERO_KEYWORDS.length - 1) {
+  KEYWORD_ENTRIES.forEach((entry, index) => {
+    tokens.push({ type: 'word', label: entry });
+    if (index < KEYWORD_ENTRIES.length - 1) {
       tokens.push({ type: 'separator', label: '×' });
     }
   });
@@ -23,3 +41,4 @@ export const createKeywordTokens = (): KeywordToken[] => {
 };
 
 export const KEYWORD_TOKENS = createKeywordTokens();
+export type { KeywordToken, KeywordEntry };

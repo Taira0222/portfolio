@@ -7,7 +7,7 @@ export const MobileHamburgerMenu = () => {
   return (
     <Sheet>
       <SheetTrigger aria-label="Open navigation menu">
-        <Menu className="h-6 w-6 text-gray-500 hover:text-gray-700" />
+        <Menu className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary focus:text-primary" />
       </SheetTrigger>
       <SheetContent side="left" className="w-60">
         <nav className="flex flex-col gap-5 p-4">
