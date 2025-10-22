@@ -7,7 +7,6 @@ import { scrollToSection } from '@/lib/scroll';
 
 export const Hero = () => {
   const handleScrollToAbout = () => {
-    if (typeof window === 'undefined' || typeof document === 'undefined') return;
     scrollToSection('about', { behavior: 'smooth' });
   };
 

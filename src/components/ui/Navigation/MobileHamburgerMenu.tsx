@@ -39,14 +39,9 @@ export const MobileHamburgerMenu = () => {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-base font-medium text-foreground transition hover:text-primary"
+                      className="flex items-center gap-3 text-base font-medium text-foreground transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
-                      <img
-                        src={icon}
-                        alt=""
-                        aria-hidden="true"
-                        className="h-5 w-5 opacity-80"
-                      />
+                      <img src={icon} alt="" aria-hidden="true" className="h-5 w-5 opacity-80" />
                       {label}
                     </a>
                   </SheetClose>

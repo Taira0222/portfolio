@@ -11,18 +11,14 @@ type KeywordToken =
   | { type: 'equals'; label: string }
   | { type: 'result'; ariaLabel: string };
 
-const KEYWORD_ENTRIES: KeywordEntry[] = HERO_KEYWORDS.map((keyword) => {
-  switch (keyword) {
-    case 'Civil Eng':
-      return { label: 'Civil Eng', mobileLabel: 'Civil' };
-    case 'Edu':
-      return { label: 'Edu' };
-    case 'Software Eng':
-      return { label: 'Software Eng', mobileLabel: 'Software' };
-    default:
-      return { label: keyword };
-  }
-});
+const KEYWORD_ENTRY_MAP: Record<string, KeywordEntry> = {
+  'Civil Eng': { label: 'Civil Eng', mobileLabel: 'Civil' },
+  Edu: { label: 'Edu' },
+  'Software Eng': { label: 'Software Eng', mobileLabel: 'Software' },
+};
+const KEYWORD_ENTRIES: KeywordEntry[] = HERO_KEYWORDS.map(
+  (keyword) => KEYWORD_ENTRY_MAP[keyword] ?? { label: keyword },
+);
 
 const createKeywordTokens = (): KeywordToken[] => {
   const tokens: KeywordToken[] = [];
