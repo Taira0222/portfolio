@@ -1,14 +1,27 @@
+import { motion } from 'framer-motion';
+import { HeroBackground } from './components/HeroBackground';
+import { HeroHeading } from './components/HeroHeading';
+import { HeroKeywords } from './components/HeroKeywords';
+import { sectionVariants } from './variants';
+import { scrollToSection } from '@/lib/scroll';
+
 export const Hero = () => {
+  const handleScrollToAbout = () => {
+    scrollToSection('about', { behavior: 'smooth' });
+  };
+
   return (
-    <section className="min-h-screen w-full flex items-center justify-center bg-gray-200 from-background to-secondary/20">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-          Welcome to My Portfolio
-        </h1>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          Crafting digital experiences with passion and precision
-        </p>
+    <motion.section
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden"
+      variants={sectionVariants}
+      initial="initial"
+      animate="animate"
+    >
+      <HeroBackground />
+      <div className="container relative z-10 mx-auto px-4 text-center">
+        <HeroHeading />
+        <HeroKeywords onScrollToAbout={handleScrollToAbout} />
       </div>
-    </section>
+    </motion.section>
   );
 };

@@ -1,0 +1,1 @@
+export { HeroKeywords } from './HeroKeywords';

@@ -2,6 +2,7 @@ import jukuCloudSvg from '@/assets/portfolio/juku-cloud.svg';
 import todoAppSvg from '@/assets/portfolio/todo-app.svg';
 import qiitaLogoSvg from '@/assets/portfolio/Qiita.svg';
 import gitHubLogoSvg from '@/assets/portfolio/GitHub.svg';
+import portfolioPng from '@/assets/portfolio/portfolio.png';
 export type PortfolioCategory = 'Web App' | 'Automation' | 'Article';
 
 export type PortfolioCtaType = 'live' | 'repo' | 'article';
@@ -88,7 +89,7 @@ export const portfolioItems: PortfolioItem[] = [
       { label: 'Repo', href: 'https://github.com/Taira0222/taira0222.github.io', type: 'repo' },
     ],
     image: {
-      src: 'https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=1600&q=80&ar=16:9',
+      src: portfolioPng,
       alt: 'Tairaのポートフォリオサイト',
     },
   },

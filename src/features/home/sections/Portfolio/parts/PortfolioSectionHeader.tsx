@@ -14,10 +14,10 @@ export const PortfolioSectionHeader = ({ variants }: PortfolioSectionHeaderProps
         id="portfolio-heading"
         className="text-3xl font-bold tracking-tight text-foreground md:text-4xl"
       >
-        成果物のまとめ
+        ポートフォリオ一覧
       </h2>
       <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-        メインのプロダクトから技術ブログ・自動化まで、成果物をまとめました。
+        メインのプロダクトから技術ブログ・自動化まで、ポートフォリオをまとめました。
       </p>
     </motion.div>
   );

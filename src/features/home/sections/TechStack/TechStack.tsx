@@ -22,7 +22,7 @@ export const TechStack = () => {
             id="tech-stack-heading"
             className="text-3xl font-bold tracking-tight text-foreground md:text-4xl"
           >
-            My Tech Stack
+            技術スタック
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             フロントエンド、バックエンド、インフラまでフルスタックで対応可能です。
