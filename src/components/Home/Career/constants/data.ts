@@ -1,4 +1,4 @@
-import type { CareerMilestone } from './types';
+import type { CareerMilestone } from '../types';
 import waterPng from '@/assets/career/water.png';
 import jukuPng from '@/assets/career/juku.png';
 import secondJukuPng from '@/assets/career/second-juku.png';
