@@ -3,15 +3,12 @@ import { HeroBackground } from './components/HeroBackground';
 import { HeroHeading } from './components/HeroHeading';
 import { HeroKeywords } from './components/HeroKeywords';
 import { sectionVariants } from './variants';
+import { scrollToSection } from '@/lib/scroll';
 
 export const Hero = () => {
   const handleScrollToAbout = () => {
     if (typeof window === 'undefined' || typeof document === 'undefined') return;
-    const target = document.getElementById('about');
-    if (!target) return;
-
-    const top = target.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top, behavior: 'smooth' });
+    scrollToSection('about', { behavior: 'smooth' });
   };
 
   return (

@@ -3,9 +3,10 @@ import { Home } from '@/features/home';
 import { sectionLinks } from '@/components/ui/Navigation/navigationLinks';
 
 export const Router = () => {
-  const homeLink = sectionLinks[0];
-  const additionalLinks = sectionLinks.slice(1);
-  const homePath = homeLink.to || '/';
+  const homeLink =
+    sectionLinks.find((link) => link.sectionId === 'top') ?? sectionLinks[0];
+  const homePath = homeLink?.to || '/';
+  const additionalLinks = sectionLinks.filter((link) => link !== homeLink);
   const shouldRedirectRoot = homePath !== '/';
   return (
     <Routes>
