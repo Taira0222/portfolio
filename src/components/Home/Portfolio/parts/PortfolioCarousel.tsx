@@ -18,7 +18,7 @@ type PortfolioCarouselProps = {
 
 export const PortfolioCarousel = ({ items, variants }: PortfolioCarouselProps) => {
   const fadeEdgeClassName =
-    'pointer-events-none absolute inset-y-0 z-10 w-12 sm:w-16 md:w-24 bg-background';
+    'pointer-events-none absolute inset-y-0 z-10 w-3 sm:w-16 md:w-26 bg-background';
   return (
     <motion.div className="mt-14" variants={variants}>
       <Carousel
