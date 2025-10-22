@@ -84,7 +84,7 @@ export const portfolioItems: PortfolioItem[] = [
       '画像最適化とLCP改善',
     ],
     ctas: [
-      { label: 'Live', href: 'https://taira0222.dev', type: 'live' },
+      { label: 'Live', href: 'https://taira0222.github.io/portfolio/', type: 'live' },
       { label: 'Repo', href: 'https://github.com/Taira0222/taira0222.github.io', type: 'repo' },
     ],
     image: {

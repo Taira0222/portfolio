@@ -90,6 +90,11 @@ export const NavigationMenuHeader = () => {
             <Link to="/#portfolio">Portfolio</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link to="/#career">Career</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
         {/** コンポーネント */}
         <NavigationMenuItem>
           <NavigationMenuTrigger>Components</NavigationMenuTrigger>

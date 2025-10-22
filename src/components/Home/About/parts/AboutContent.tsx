@@ -1,3 +1,4 @@
+import { useIsMobile } from '@/hooks/useMobile';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 
@@ -12,6 +13,7 @@ type AboutContentProps = {
 };
 
 export const AboutContent = ({ variants }: AboutContentProps) => {
+  const isMobile = useIsMobile();
   return (
     <motion.div variants={variants} className="flex flex-col gap-6 text-left">
       <div>
@@ -22,7 +24,21 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
           id="about-heading"
           className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl"
         >
-          起業を経験しているプロダクト志向のエンジニア
+          {isMobile ? (
+            <>
+              起業を通じてプロダクト
+              <br />
+              づくりの面白さを
+              <br />
+              実感したエンジニア
+            </>
+          ) : (
+            <>
+              起業を通じてプロダクトづくりの
+              <br />
+              面白さを実感したエンジニア
+            </>
+          )}
         </h2>
       </div>
       <div className="space-y-4 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-loose">
@@ -33,4 +49,3 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
     </motion.div>
   );
 };
-

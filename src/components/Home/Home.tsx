@@ -4,6 +4,7 @@ import { About } from './About';
 
 import { TechStack } from './TechStack';
 import { Portfolio } from './Portfolio';
+import { Career } from './Career';
 
 export const Home = () => {
   return (
@@ -15,6 +16,7 @@ export const Home = () => {
           <About />
           <TechStack />
           <Portfolio />
+          <Career />
         </main>
         <div className="h-96" /> {/* フッターのスペース確保 */}
       </div>
