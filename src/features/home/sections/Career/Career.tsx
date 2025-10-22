@@ -12,7 +12,7 @@ export const Career = () => {
   return (
     <motion.section
       id="career"
-      className="relative overflow-hidden bg-gradient-to-b from-secondary/20 via-background to-background py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-sky-100 via-blue-50 to-sky-50 py-24"
       aria-labelledby="career-heading"
       ref={sectionRef}
       initial={initial}

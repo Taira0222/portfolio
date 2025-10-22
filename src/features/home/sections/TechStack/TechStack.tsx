@@ -7,12 +7,15 @@ export const TechStack = () => {
   return (
     <motion.section
       id="tech-stack"
-      className="relative bg-gradient-to-b from-secondary/10 via-background to-background py-24"
+      className="relative bg-gradient-to-b from-sky-100 via-blue-50 to-sky-50 py-24"
       aria-labelledby="tech-stack-heading"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background via-background/80 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-12 bottom-12 h-32 rounded-full bg-primary/10 blur-3xl dark:bg-primary/20" />
+
       <div className="container mx-auto max-w-6xl px-6 md:px-10">
         <div className="flex flex-col items-center gap-4 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-muted-foreground">

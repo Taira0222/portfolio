@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ChevronsDown } from 'lucide-react';
 import { HERO_EASING, KEYWORD_DELAY_BASE } from '../../constants';
 import { KEYWORD_TOKENS, type KeywordToken } from '../../tokens';
-import { keywordContainerVariants, keywordSharedAnimation } from '../../variants';
+import { keywordContainerVariants } from '../../variants';
 import { KeywordLabel } from './KeywordLabel';
 
 type HeroKeywordsProps = {
@@ -23,26 +23,24 @@ export const HeroKeywords = ({ onScrollToAbout }: HeroKeywordsProps) => (
 const renderToken = (token: KeywordToken, index: number, onScrollToAbout: () => void) => {
   if (token.type === 'word') {
     return (
-      <motion.span
+      <span
         key={`${token.label.label}-${index}`}
-        {...keywordSharedAnimation(index)}
         className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/10 px-2 py-1.5 text-[0.70rem] tracking-[0.28em] leading-none backdrop-blur sm:px-5 sm:py-2 sm:text-xs md:text-sm"
       >
         <KeywordLabel entry={token.label} />
-      </motion.span>
+      </span>
     );
   }
 
   if (token.type === 'separator' || token.type === 'equals') {
     const textClass = token.type === 'separator' ? 'text-primary/70' : 'text-primary/80';
     return (
-      <motion.span
+      <span
         key={`${token.type}-${index}`}
-        {...keywordSharedAnimation(index)}
         className={`inline-flex items-center justify-center px-1 text-[0.7rem] sm:text-sm md:text-lg ${textClass}`}
       >
         {token.label}
-      </motion.span>
+      </span>
     );
   }
 

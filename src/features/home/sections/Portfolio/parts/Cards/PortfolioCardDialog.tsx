@@ -33,14 +33,16 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
     <DialogContent className="max-w-2xl space-y-6">
       <DialogHeader className="space-y-2 text-left">
         <DialogTitle className="text-3xl font-bold tracking-tight">{item.title}</DialogTitle>
-        <DialogDescription className="space-y-2">
-          <span className="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-secondary-foreground/80">
-            {item.category}
-          </span>
-          <p className="text-sm text-foreground">{item.summary}</p>
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            {item.meta.timeline} / {item.meta.role}
-          </p>
+        <DialogDescription asChild className="space-y-2">
+          <div>
+            <span className="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-secondary-foreground/80">
+              {item.category}
+            </span>
+            <p className="text-sm text-foreground">{item.summary}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+              {item.meta.timeline} / {item.meta.role}
+            </p>
+          </div>
         </DialogDescription>
       </DialogHeader>
       <div className="space-y-6">

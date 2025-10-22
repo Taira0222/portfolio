@@ -80,9 +80,9 @@ export const portfolioItems: PortfolioItem[] = [
     },
     technologies: ['React', 'TypeScript', 'Vite', 'shadcn/ui', 'Tailwind', 'Framer Motion'],
     highlights: [
+      'GitHub Pages でホスティング',
       'codex を使用したAI駆動開発ワークフロー',
-      'OGP・PWA含むメタ/表示最適化',
-      '画像最適化とLCP改善',
+      'shadcn/ui・Framer MotionでモダンなUI/UX実現',
     ],
     ctas: [
       { label: 'Live', href: 'https://taira0222.github.io/portfolio/', type: 'live' },

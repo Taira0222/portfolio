@@ -18,7 +18,7 @@ export const Hero = () => {
       animate="animate"
     >
       <HeroBackground />
-      <div className="container relative z-10 mx-auto px-4 text-center">
+      <div className="container relative z-10 mx-auto -mt-25 px-4 text-center sm:mt-0">
         <HeroHeading />
         <HeroKeywords onScrollToAbout={handleScrollToAbout} />
       </div>
