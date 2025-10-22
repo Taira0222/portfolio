@@ -36,7 +36,7 @@ export const Career = () => {
             id="career-heading"
             className="text-3xl font-bold tracking-tight text-foreground md:text-4xl"
           >
-            私のキャリアの軌跡
+            今までのキャリア
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             土木の公務員、学習塾起業、自社でのプロダクト開発など多岐にわたって経験してきました。

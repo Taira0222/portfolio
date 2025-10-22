@@ -16,7 +16,7 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
     <motion.div variants={variants} className="flex flex-col gap-6 text-left">
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-          About Me
+          私について
         </p>
         <h2
           id="about-heading"

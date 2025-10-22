@@ -1,25 +1,57 @@
 import { Menu } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from '../sheet';
 import { Link } from 'react-router-dom';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '../sheet';
+import { sectionLinks, snsLinks } from './navigationLinks';
 
 export const MobileHamburgerMenu = () => {
   return (
     <Sheet>
-      <SheetTrigger>
+      <SheetTrigger aria-label="Open navigation menu">
         <Menu className="h-6 w-6 text-gray-500 hover:text-gray-700" />
       </SheetTrigger>
-      <SheetContent side="left" className="w-48">
-        <div className="flex flex-col space-y-4 p-4">
-          <Link to="/" className="text-lg">
-            Home
-          </Link>
-          <Link to="/#portfolio" className="text-lg">
-            Portfolio
-          </Link>
-          <Link to="/#career" className="text-lg">
-            Career
-          </Link>
-        </div>
+      <SheetContent side="left" className="w-60">
+        <nav className="flex flex-col gap-5 p-4">
+          <div className="flex flex-col gap-3">
+            {sectionLinks.map(({ label, to }) => (
+              <SheetClose key={label} asChild>
+                <Link
+                  to={to}
+                  className="text-base font-medium text-foreground transition hover:text-primary"
+                >
+                  {label}
+                </Link>
+              </SheetClose>
+            ))}
+          </div>
+
+          <div className="space-y-2 border-t border-border/40 pt-4">
+            <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              SNS
+            </span>
+            <ul className="flex flex-col gap-2">
+              {snsLinks.map(({ label, href, icon }) => (
+                <li key={label}>
+                  <SheetClose asChild>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-base font-medium text-foreground transition hover:text-primary"
+                    >
+                      <img
+                        src={icon}
+                        alt=""
+                        aria-hidden="true"
+                        className="h-5 w-5 opacity-80"
+                      />
+                      {label}
+                    </a>
+                  </SheetClose>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
       </SheetContent>
     </Sheet>
   );

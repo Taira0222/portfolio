@@ -32,8 +32,8 @@ export const Header = () => {
       {/* デスクトップナビゲーション（md以上） */}
       <div
         className={cn(
-          'hidden md:flex p-4 fixed top-0 left-0 right-0 z-50 transition-transform duration-500 bg-white',
-          showHeader ? 'translate-y-0' : '-translate-y-full'
+          'hidden md:flex justify-end py-4 px-8 fixed top-0 left-0 right-0 z-50 transition-transform duration-500 bg-white',
+          showHeader ? 'translate-y-0' : '-translate-y-full',
         )}
       >
         <NavigationMenuHeader />
@@ -43,7 +43,7 @@ export const Header = () => {
       <div
         className={cn(
           'md:hidden flex justify-end p-4 fixed top-0 left-0 right-0 z-50 transition-colors duration-300',
-          showMobileBg ? 'bg-white shadow-md' : 'bg-transparent'
+          showMobileBg ? 'bg-white shadow-md' : 'bg-transparent',
         )}
       >
         <MobileHamburgerMenu />
