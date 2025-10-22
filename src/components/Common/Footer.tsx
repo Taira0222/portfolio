@@ -1,4 +1,5 @@
 import { ArrowUp } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 import GitHubLogoPng from '@/assets/footer/githubLogo.png';
 import QiitaLogoPng from '@/assets/footer/qiitaLogo.png';
@@ -61,12 +62,12 @@ export const Footer = () => {
           </nav>
         </div>
       </footer>
-      <BackToTopFloatingButton />
+      <BackToTopButton />
     </>
   );
 };
 
-const BackToTopFloatingButton = () => {
+const BackToTopButton = () => {
   const isVisible = useScrollTrigger({ threshold: 240 });
   const handleBackToTop = () => {
     if (typeof window !== 'undefined') {
@@ -74,14 +75,18 @@ const BackToTopFloatingButton = () => {
     }
   };
 
+  const baseButtonClass =
+    'fixed bottom-24 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/40 bg-primary text-background shadow-lg transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:right-10 md:bottom-28 lg:bottom-35';
+
   return (
     <button
       type="button"
       onClick={handleBackToTop}
       aria-label="Back to top"
-      className={`fixed bottom-24 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/40 bg-primary text-background shadow-lg transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:right-10 md:bottom-28 lg:bottom-35 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
-      }`}
+      className={cn(
+        baseButtonClass,
+        isVisible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0',
+      )}
     >
       <ArrowUp className="h-5 w-5" aria-hidden="true" />
     </button>
