@@ -24,6 +24,12 @@ const socialLinks: SocialLink[] = [
   },
 ];
 
+// Social button styles: split into base and interactive parts for readability
+const socialButtonBaseClass =
+  'group flex h-11 w-11 items-center justify-center rounded-full border border-border/50 bg-background/70 shadow-sm transition';
+const socialButtonInteractiveClass =
+  'hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-primary/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
+
 export const Footer = () => {
   return (
     <>
@@ -48,7 +54,7 @@ export const Footer = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-border/50 bg-background/70 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-primary/30"
+                className={cn(socialButtonBaseClass, socialButtonInteractiveClass)}
               >
                 <img
                   src={icon}
