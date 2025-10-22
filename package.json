@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "ci": "eslint src && prettier --check .",
     "build": "tsc -b && vite build",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",

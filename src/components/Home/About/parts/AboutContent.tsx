@@ -20,9 +20,9 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
         </p>
         <h2
           id="about-heading"
-          className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl"
+          className="mt-4 text-balance break-words text-3xl font-bold tracking-tight text-foreground md:text-4xl"
         >
-          起業を経験しているプロダクト志向のエンジニア
+          起業を通じてプロダクトづくりの面白さを実感したエンジニア
         </h2>
       </div>
       <div className="space-y-4 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-loose">
@@ -33,4 +33,3 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
     </motion.div>
   );
 };
-

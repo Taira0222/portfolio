@@ -16,6 +16,9 @@ export const MobileHamburgerMenu = () => {
           <Link to="/#portfolio" className="text-lg">
             Portfolio
           </Link>
+          <Link to="/#career" className="text-lg">
+            Career
+          </Link>
         </div>
       </SheetContent>
     </Sheet>
