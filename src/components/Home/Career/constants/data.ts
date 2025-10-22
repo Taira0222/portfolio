@@ -54,7 +54,7 @@ export const careerTimeline: CareerMilestone[] = [
     },
   },
   {
-    id: 'launch-video-platform',
+    id: 'launched-video-platform',
     date: '2023年12月',
     title: '過去問解説動画プラットフォームをリリース',
     description:
@@ -98,7 +98,7 @@ export const careerTimeline: CareerMilestone[] = [
     },
   },
   {
-    id: 'launch-juku-cloud',
+    id: 'launched-juku-cloud',
     date: '2025年10月',
     title: 'Juku Cloud(MVP)をリリース',
     description:

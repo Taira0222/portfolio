@@ -27,10 +27,7 @@ export const PortfolioCarousel = ({ items, variants }: PortfolioCarouselProps) =
       >
         <CarouselContent className="pb-4">
           {items.map((item) => (
-            <CarouselItem
-              key={item.id}
-              className="basis-[clamp(280px,70vw,640px)]"
-            >
+            <CarouselItem key={item.id} className="basis-[clamp(280px,60vw,640px)]">
               <PortfolioCard item={item} />
             </CarouselItem>
           ))}

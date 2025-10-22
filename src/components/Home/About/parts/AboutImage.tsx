@@ -15,7 +15,7 @@ export const AboutImage = ({ variants }: AboutImageProps) => {
     <motion.div
       variants={variants}
       transition={{ duration: 0.7, ease: easeOut }}
-      className={cn('mx-auto w-full', isMobile ? 'max-w-[14rem]' : 'max-w-xs md:max-w-sm')}
+      className={cn('mx-auto w-full', isMobile ? 'max-w-56' : 'max-w-xs md:max-w-sm')}
     >
       <div className="relative mx-auto flex aspect-square w-full items-center justify-center">
         <div
