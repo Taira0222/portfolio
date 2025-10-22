@@ -76,7 +76,11 @@ const BackToTopButton = () => {
   };
 
   const baseButtonClass =
-    'fixed bottom-24 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/40 bg-primary text-background shadow-lg transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:right-10 md:bottom-28 lg:bottom-35';
+    'fixed bottom-24 right-6 z-50 flex h-12 w-12 ' +
+    'items-center justify-center rounded-xl border border-primary/40 ' +
+    'bg-primary text-background shadow-lg transition-all duration-200 ' +
+    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ' +
+    'md:right-10 md:bottom-28 lg:bottom-35';
 
   return (
     <button
