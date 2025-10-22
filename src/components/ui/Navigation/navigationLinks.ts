@@ -17,10 +17,11 @@ export type SnsLink = {
 };
 
 const buildFullPath = (slug: string) => {
+  const baseUrl = import.meta.env.VITE_BASE_URL;
   if (!slug || slug === '/') {
-    return import.meta.env.VITE_BASE_URL;
+    return baseUrl;
   }
-  const normalizedBase = (import.meta.env.VITE_BASE_URL || '').replace(/\/+$/, '');
+  const normalizedBase = (baseUrl || '').replace(/\/+$/, '');
   const basePath = normalizedBase === '' || normalizedBase === '/' ? '' : normalizedBase;
   return `${basePath}${slug}`;
 };
