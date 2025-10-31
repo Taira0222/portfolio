@@ -1,1 +1,165 @@
-{}
+{
+  "navigation": {
+    "sections": {
+      "home": "Home",
+      "about": "About Me",
+      "techStack": "Tech Stack",
+      "portfolio": "Portfolio",
+      "career": "Career History"
+    },
+    "sns": "Social Media",
+    "language": "Language",
+    "menuTitle": "Navigation Menu",
+    "menuDescription": "Select a section or social media link.",
+    "toggle": {
+      "toEnglish": "English",
+      "toJapanese": "日本語",
+      "switchToEnglish": "Switch to English",
+      "switchToJapanese": "Switch to Japanese"
+    }
+  },
+  "about": {
+    "eyebrow": "About Me",
+    "title": "A software engineer who found the value of product creation through entrepreneurship",
+    "paragraphs": [
+      "I’m Taira, a software engineer based in the U.S. with a background in civil engineering and education entrepreneurship.",
+      "I majored in civil engineering at university and worked for several years at the Tokyo Metropolitan Government before founding a private tutoring school.",
+      "Through managing the school and teaching students, I came to strongly feel that technology has the power to turn ideas into reality, which led me to start learning programming.",
+      "Currently, I’m focusing on web development, and developing an education management app called \"Juku Cloud\" to address the issue of teacher-dependent instruction that I experienced during my three years of running the school."
+    ]
+  },
+  "techStack": {
+    "eyebrow": "Tech Stack",
+    "title": "My Tech Stack",
+    "description": "Capable of delivering across the front end, back end, and infrastructure.",
+    "categories": {
+      "frontend": "Front End",
+      "backend": "Back End",
+      "database": "Database",
+      "cicd": "CI/CD",
+      "infrastructure": "Infrastructure",
+      "testing": "Testing"
+    }
+  },
+  "portfolio": {
+    "title": "My Portfolio",
+    "description": "A collection of my flagship product work, technical writing, and automation projects.",
+    "labels": {
+      "technologies": "Tech Stack",
+      "highlights": "Highlights"
+    },
+    "items": {
+      "juku-cloud": {
+        "title": "Juku Cloud",
+        "summary": "SaaS that standardizes sharing student traits and handoff notes for tutoring schools.",
+        "highlights": [
+          "Manage student profiles and lesson handoffs in the cloud",
+          "Production architecture with ECS Fargate, RDS, and CloudFront",
+          "Automated testing and deployments via CI/CD"
+        ],
+        "imageAlt": "Juku Cloud app dashboard illustration"
+      },
+      "portfolio-site": {
+        "title": "Portfolio Site",
+        "summary": "Personal portfolio built with an AI-driven development workflow.",
+        "highlights": [
+          "Hosted on GitHub Pages",
+          "AI-assisted workflow powered by Codex",
+          "Modern UI/UX with shadcn/ui and Framer Motion"
+        ],
+        "imageAlt": "Preview of Taira's portfolio site"
+      },
+      "todo-rails": {
+        "title": "Todo App (Rails)",
+        "summary": "Minimal Rails baseline covering authentication, CRUD, and Minitest.",
+        "highlights": [
+          "Implements Devise authentication and CRUD essentials",
+          "Comprehensive Minitest coverage",
+          "Supports Google OAuth sign-in"
+        ],
+        "imageAlt": "Todo application built with Rails"
+      },
+      "qiita-blog": {
+        "title": "Qiita Blog",
+        "summary": "Sharing beginner-friendly notes on Ruby, Rails, React, AWS, and DevOps.",
+        "highlights": [
+          "Started publishing on October 6, 2024",
+          "Completed a year of daily posts (~700 contributions)",
+          "Explains fundamentals from a beginner’s perspective"
+        ],
+        "imageAlt": "Qiita technical blog",
+        "ctas": [{ "label": "Article (Profile)" }, { "label": "Achieved One Year of Daily Posts" }]
+      },
+      "qiita-x-automation": {
+        "title": "Automated Qiita & X Posting with GitHub Actions",
+        "summary": "Cron-based workflow that posts to Qiita and X automatically using GitHub Actions.",
+        "highlights": [
+          "Supports both scheduled and manual triggers",
+          "Automates posting without relying on any UI, even during maintenance",
+          "Integrates the Qiita API with the X API"
+        ],
+        "imageAlt": "Automation flow using GitHub Actions for Qiita and X"
+      }
+    }
+  },
+  "career": {
+    "title": "Career Journey",
+    "description": "My experience spans civil engineering in the public sector, founding a tutoring business, and building my own product.",
+    "timeline": {
+      "civil-engineer": {
+        "date": "April 2019",
+        "title": "Joined Tokyo Metropolitan Waterworks Bureau",
+        "description": "After graduating from Tokyo Metropolitan University, I entered the Tokyo Metropolitan Government as a technical officer to work on urban disaster prevention projects, primarily handling seismic upgrades for large 50 cm water pipes.",
+        "imageAlt": "Illustration of a seismic-resistant water pipe"
+      },
+      "change-career-to-education": {
+        "date": "December 2020",
+        "title": "Launched a Private Tutoring School",
+        "description": "While enjoying the stability of public service, I questioned a status-quo career path, resigned, and started a two-person tutoring school in Yokohama where I felt my strengths fit education entrepreneurship.",
+        "imageAlt": "Illustration of a small tutoring classroom"
+      },
+      "expand-business": {
+        "date": "May 2022",
+        "title": "Opened a Second Campus",
+        "description": "Within eighteen months enrollment exceeded fifty students, so we opened a second campus to expand the business.",
+        "imageAlt": "Photo representing the second campus"
+      },
+      "selected-as-entrepreneur-program": {
+        "date": "October 2023",
+        "title": "Selected for Entrepreneur Support Program",
+        "description": "Chosen for METI’s “Shido Next Innovator 2023,” I learned startup fundamentals and was inspired by Silicon Valley’s speed and the ambition of fellow founders.",
+        "imageAlt": "Scene from the Shido Next Innovator 2023 pitch event"
+      },
+      "launched-video-platform": {
+        "date": "December 2023",
+        "title": "Released a Past-Exam Video Platform",
+        "description": "Built and launched a learning platform for viewing past-exam walkthrough videos using no-code tools, reinforcing my belief that technology can turn ideas into reality.",
+        "imageAlt": "Screenshot of the online learning platform"
+      },
+      "quit-juku": {
+        "date": "April 2024",
+        "title": "Closed the Tutoring School",
+        "description": "Relocated to the United States for my spouse’s job and closed the school, gaining invaluable lessons in both instruction and business operations.",
+        "imageAlt": "Graphic symbolizing closing a business"
+      },
+      "move-to-us": {
+        "date": "July 2024",
+        "title": "Moved to the United States",
+        "description": "With almost no prior experience abroad, I faced nerves about my first long-term move overseas but am now enjoying life in a new environment.",
+        "imageAlt": "View of Los Angeles from an airplane window"
+      },
+      "start-learning-programming": {
+        "date": "August 2024",
+        "title": "Started Learning Programming",
+        "description": "Once life settled down, I began studying programming—ready to join a bootcamp if I hit a wall, yet I managed to stay consistent with self-study.",
+        "imageAlt": "Illustration symbolizing coding"
+      },
+      "launched-juku-cloud": {
+        "date": "October 2025",
+        "title": "Released Juku Cloud (MVP)",
+        "description": "To solve the issue of instruction relying on individual teachers, I built and launched “Juku Cloud (MVP),” an education management app that shares student traits in the cloud.",
+        "imageAlt": "Promotional image for Juku Cloud"
+      }
+    }
+  }
+}
