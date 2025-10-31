@@ -11,7 +11,7 @@ i18n
   .use(initReactI18next) // React 用の i18next
   .init({
     fallbackLng: 'ja',
-    debug: true,
+    debug: import.meta.env.VITE_DEV || false, // 開発環境でのみデバッグ情報を表示
     interpolation: {
       escapeValue: false,
     },
@@ -19,7 +19,7 @@ i18n
       loadPath: `${basePath}locales/{{lng}}/{{ns}}.json`, // 翻訳ファイルの場所を指定
     },
     detection: {
-      order: ['localStorage'], // 言語判定の優先度
+      order: ['localStorage', 'navigator'], // 言語判定の優先度
       caches: ['localStorage'], // 選択言語をローカルに保持
     },
   });

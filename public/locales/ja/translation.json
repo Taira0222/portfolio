@@ -29,8 +29,8 @@
     ]
   },
   "techStack": {
-    "eyebrow": "技術スタック",
-    "title": "フロントからバックエンド、インフラまでを一貫して担当します",
+    "eyebrow": "Tech Stack",
+    "title": "私の技術スタック",
     "description": "フロントエンド、バックエンド、インフラまでフルスタックで対応可能です。",
     "categories": {
       "frontend": "フロントエンド",
@@ -88,10 +88,7 @@
           "初心者ならではの視点で基礎的な内容を解説"
         ],
         "imageAlt": "Qiita 技術ブログ",
-        "ctas": [
-          { "label": "Article (Profile)" },
-          { "label": "1年間毎日投稿達成" }
-        ]
+        "ctas": [{ "label": "Article (Profile)" }, { "label": "1年間毎日投稿達成" }]
       },
       "qiita-x-automation": {
         "title": "GitHub ActionsでQiita & X自動投稿",

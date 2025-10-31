@@ -30,7 +30,7 @@
   },
   "techStack": {
     "eyebrow": "Tech Stack",
-    "title": "Full-stack support from front end to infrastructure",
+    "title": "My Tech Stack",
     "description": "Capable of delivering across the front end, back end, and infrastructure.",
     "categories": {
       "frontend": "Front End",
@@ -42,7 +42,7 @@
     }
   },
   "portfolio": {
-    "title": "Portfolio Showcase",
+    "title": "My Portfolio",
     "description": "A collection of my flagship product work, technical writing, and automation projects.",
     "labels": {
       "technologies": "Tech Stack",
@@ -88,10 +88,7 @@
           "Explains fundamentals from a beginner’s perspective"
         ],
         "imageAlt": "Qiita technical blog",
-        "ctas": [
-          { "label": "Article (Profile)" },
-          { "label": "Achieved One Year of Daily Posts" }
-        ]
+        "ctas": [{ "label": "Article (Profile)" }, { "label": "Achieved One Year of Daily Posts" }]
       },
       "qiita-x-automation": {
         "title": "Automated Qiita & X Posting with GitHub Actions",

@@ -30,7 +30,9 @@ export const NavigationMenuHeader = () => {
           </NavigationMenuItem>
         ))}
         <NavigationMenuItem className="text-left">
-          <NavigationMenuTrigger>{t('navigation.sns', { defaultValue: 'SNS' })}</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            {t('navigation.sns', { defaultValue: 'SNS' })}
+          </NavigationMenuTrigger>
           <NavigationMenuContent className="md:left-auto md:right-0">
             <ul className="grid min-w-[220px] gap-2 p-2 text-left">
               {snsLinks.map(({ label, href, icon }) => (

@@ -17,9 +17,9 @@ export const CareerCard = ({ milestone, variants }: CareerCardProps) => {
   const date = t(`${baseKey}.date`, { defaultValue: milestone.date });
   const title = t(`${baseKey}.title`, { defaultValue: milestone.title });
   const description = t(`${baseKey}.description`, { defaultValue: milestone.description });
-  const imageAlt =
-    milestone.image &&
-    t(`${baseKey}.imageAlt`, { defaultValue: milestone.image.alt });
+  const imageAlt: string = milestone.image
+    ? t(`${baseKey}.imageAlt`, { defaultValue: milestone.image.alt })
+    : '';
 
   return (
     <motion.article

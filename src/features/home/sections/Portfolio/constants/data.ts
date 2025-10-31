@@ -124,7 +124,7 @@ export const portfolioItems: PortfolioItem[] = [
     summary: 'Ruby・Rails・React・AWS・DevOpsの学習ノートやノウハウを初心者の視点から発信。',
     meta: {
       timeline: '2024–2025',
-      role: 'Author',
+      role: 'blog',
     },
     technologies: ['Qiita'],
     highlights: [
