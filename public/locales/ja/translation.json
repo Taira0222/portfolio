@@ -1,1 +1,168 @@
-{}
+{
+  "navigation": {
+    "sections": {
+      "home": "ホーム",
+      "about": "わたしについて",
+      "techStack": "技術スタック",
+      "portfolio": "ポートフォリオ一覧",
+      "career": "今までのキャリア"
+    },
+    "sns": "SNS",
+    "language": "言語",
+    "menuTitle": "ナビゲーションメニュー",
+    "menuDescription": "セクションまたはSNSのリンクを選択してください。",
+    "toggle": {
+      "toEnglish": "English",
+      "toJapanese": "日本語",
+      "switchToEnglish": "英語表示に切り替える",
+      "switchToJapanese": "日本語表示に切り替える"
+    }
+  },
+  "about": {
+    "eyebrow": "私について",
+    "title": "起業を通じてプロダクトづくりの面白さを実感したエンジニア",
+    "paragraphs": [
+      "アメリカ在住のソフトウェアエンジニア志望、Tairaです。",
+      "大学では土木工学を専攻し、東京都の技術職として数年勤務した後、個別指導塾を起業しました。",
+      "教育現場で経営と指導の両面に携わる中で、「テクノロジーで想いを形にできる」と強く感じ、プログラミングの学習を始めました。",
+      "現在はWeb開発を中心にスキルを磨きながら、3年間の塾経営で感じた“属人的な指導”という課題を解決するため、教育管理アプリ「Juku Cloud」を開発しています。"
+    ]
+  },
+  "techStack": {
+    "eyebrow": "技術スタック",
+    "title": "フロントからバックエンド、インフラまでを一貫して担当します",
+    "description": "フロントエンド、バックエンド、インフラまでフルスタックで対応可能です。",
+    "categories": {
+      "frontend": "フロントエンド",
+      "backend": "バックエンド",
+      "database": "データベース",
+      "cicd": "CI/CD",
+      "infrastructure": "インフラ",
+      "testing": "テスト"
+    }
+  },
+  "portfolio": {
+    "title": "ポートフォリオ一覧",
+    "description": "メインのプロダクトから技術ブログ・自動化まで、ポートフォリオをまとめました。",
+    "labels": {
+      "technologies": "使用技術",
+      "highlights": "ハイライト"
+    },
+    "items": {
+      "juku-cloud": {
+        "title": "Juku Cloud",
+        "summary": "個別指導塾の「特性共有・授業引継ぎ」を標準化するSaaS。",
+        "highlights": [
+          "生徒特性管理と授業引継ぎをクラウドで管理",
+          "ECS Fargate + RDS + CloudFrontの本番構成",
+          "CI/CDでテスト〜デプロイ自動化"
+        ],
+        "imageAlt": "Juku Cloud｜生徒一人一人の特性をクラウドで管理できる個別指導塾向けアプリ"
+      },
+      "portfolio-site": {
+        "title": "Portfolioサイト",
+        "summary": "AI駆動開発ワークフローで構築した個人ポートフォリオサイト。",
+        "highlights": [
+          "GitHub Pages でホスティング",
+          "codex を使用したAI駆動開発ワークフロー",
+          "shadcn/ui・Framer MotionでモダンなUI/UX実現"
+        ],
+        "imageAlt": "Tairaのポートフォリオサイト"
+      },
+      "todo-rails": {
+        "title": "Todo アプリ（Rails）",
+        "summary": "認証・CRUD・Minitestを最小構成でまとめたRails学習用ベースライン。",
+        "highlights": [
+          "Devise認証とCRUDの基本実装",
+          "Minitestによる網羅的なテストカバレッジ",
+          "Google OAuthによる外部認証"
+        ],
+        "imageAlt": "Rails で実装された Todo アプリ"
+      },
+      "qiita-blog": {
+        "title": "Qiita ブログ",
+        "summary": "Ruby・Rails・React・AWS・DevOpsの学習ノートやノウハウを初心者の視点から発信。",
+        "highlights": [
+          "2024年10/6から記事投稿開始。",
+          "毎日投稿1年間達成。累計Contributions 約700",
+          "初心者ならではの視点で基礎的な内容を解説"
+        ],
+        "imageAlt": "Qiita 技術ブログ",
+        "ctas": [
+          { "label": "Article (Profile)" },
+          { "label": "1年間毎日投稿達成" }
+        ]
+      },
+      "qiita-x-automation": {
+        "title": "GitHub ActionsでQiita & X自動投稿",
+        "summary": "GitHub Actionsのcronを用いて、Qiita記事とX（旧Twitter）へ定期自動投稿するワークフロー。",
+        "highlights": [
+          "スケジュール/手動トリガー両対応",
+          "サーバーのメンテナンス中でも、UIを介さず自動投稿可能",
+          "Qiita APIとX APIの連携実装"
+        ],
+        "imageAlt": "GitHub ActionsでQiita & X自動投稿"
+      }
+    }
+  },
+  "career": {
+    "title": "今までのキャリア",
+    "description": "土木の公務員、学習塾起業、自社でのプロダクト開発など多岐にわたって経験してきました。",
+    "timeline": {
+      "civil-engineer": {
+        "date": "2019年4月",
+        "title": "東京都水道局に入社",
+        "description": "首都大学東京（現・東京都立大学）を卒業後、都市防災事業に携わるため東京都の技術職として入庁。主に直径50cmほどの大口径水道管の耐震工事などに従事しました。",
+        "imageAlt": "耐震の水道管のイメージ"
+      },
+      "change-career-to-education": {
+        "date": "2020年12月",
+        "title": "個別指導塾を立ち上げる",
+        "description": "公務員として安定した環境に身を置く中で、現状維持的な働き方に疑問を感じ退職。自身の特性から教育分野での起業が最も適していると考え、神奈川県横浜市で2名体制の個別指導塾を立ち上げました。",
+        "imageAlt": "小さな学習塾の教室イメージ"
+      },
+      "expand-business": {
+        "date": "2022年5月",
+        "title": "生徒増加により2校舎目を開設",
+        "description": "開設から1年半で生徒数が50名を超え、事業拡大のため2校舎目を開設しました。",
+        "imageAlt": "新規校舎のイメージ写真"
+      },
+      "selected-as-entrepreneur-program": {
+        "date": "2023年10月",
+        "title": "起業家支援プログラムに選出",
+        "description": "経済産業省主催の「始動 Next Innovator 2023」に選出。起業家としての基礎を学び、シリコンバレーの圧倒的なスピード感と、他の起業家たちの高い志に強い刺激を受けました。",
+        "imageAlt": "始動 Next Innovator 2023 のピッチイベントの様子"
+      },
+      "launched-video-platform": {
+        "date": "2023年12月",
+        "title": "過去問解説動画プラットフォームをリリース",
+        "description": "ノーコードツールを活用し、過去問の解説動画を視聴できる学習プラットフォームを開発・リリース。この経験を通じて、「技術があれば想いを形にできる」と実感しました。",
+        "imageAlt": "オンライン学習プラットフォームのスクリーンショット"
+      },
+      "quit-juku": {
+        "date": "2024年4月",
+        "title": "個別指導塾を退職",
+        "description": "妻の仕事の都合でアメリカへ移住することとなり、私の校舎を閉校しました。学習指導だけでなく、経営面でも多くの学びがあり、貴重な経験となりました。",
+        "imageAlt": "事業を終えるイメージ"
+      },
+      "move-to-us": {
+        "date": "2024年7月",
+        "title": "アメリカへ移住",
+        "description": "海外旅行すらほとんど経験がなく、初めての海外生活に不安もありましたが、新しい環境での生活を楽しんでいます。",
+        "imageAlt": "飛行機の窓から見下ろすロサンゼルスの街並み"
+      },
+      "start-learning-programming": {
+        "date": "2024年8月",
+        "title": "プログラミング学習を開始",
+        "description": "生活が落ち着いたので、プログラミングの学習を開始。最初は独学で学んで挫折したらスクールに通うつもりでしたが、独学での学習を継続できました。",
+        "imageAlt": "コーディングを連想する画像"
+      },
+      "launched-juku-cloud": {
+        "date": "2025年10月",
+        "title": "Juku Cloud(MVP)をリリース",
+        "description": "教育現場で感じた「属人的な指導」という課題を解決するため、生徒の特性をクラウド上で管理・共有できる教育管理アプリ「Juku Cloud（MVP）」を開発・リリースしました。",
+        "imageAlt": "Juku Cloud の宣材写真"
+      }
+    }
+  }
+}

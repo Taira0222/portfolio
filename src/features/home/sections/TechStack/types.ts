@@ -21,7 +21,8 @@ export type TechStackItem = {
 };
 
 export type TechStackCategory = {
-  title: string;
+  titleKey: string;
+  defaultTitle: string;
   icon: LucideIcon;
   items: TechStackItem[];
 };

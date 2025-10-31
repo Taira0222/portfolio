@@ -1,9 +1,22 @@
 import { Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from '../sheet';
-import { sectionLinks, snsLinks } from './navigationLinks';
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from '../sheet';
+import { useSectionLinks, snsLinks } from './navigationLinks';
+import { LanguageToggle } from './LanguageToggle';
+import { useTranslation } from 'react-i18next';
 
 export const MobileHamburgerMenu = () => {
+  const sectionLinks = useSectionLinks();
+  const { t } = useTranslation();
+
   return (
     <Sheet>
       <SheetTrigger
@@ -13,6 +26,14 @@ export const MobileHamburgerMenu = () => {
         <Menu className="h-6 w-6" aria-hidden="true" />
       </SheetTrigger>
       <SheetContent side="left" className="w-60">
+        <SheetHeader className="sr-only">
+          <SheetTitle>{t('navigation.menuTitle', { defaultValue: 'Navigation Menu' })}</SheetTitle>
+          <SheetDescription>
+            {t('navigation.menuDescription', {
+              defaultValue: 'Choose a section or social media link.',
+            })}
+          </SheetDescription>
+        </SheetHeader>
         <nav className="flex flex-col gap-5 p-4">
           <div className="flex flex-col gap-3">
             {sectionLinks.map(({ label, to }) => (
@@ -29,7 +50,7 @@ export const MobileHamburgerMenu = () => {
 
           <div className="space-y-2 border-t border-border/40 pt-4">
             <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              SNS
+              {t('navigation.sns', { defaultValue: 'SNS' })}
             </span>
             <ul className="flex flex-col gap-2">
               {snsLinks.map(({ label, href, icon }) => (
@@ -48,6 +69,13 @@ export const MobileHamburgerMenu = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="space-y-2 border-t border-border/40 pt-4">
+            <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              {t('navigation.language', { defaultValue: 'Language' })}
+            </span>
+            <LanguageToggle className="w-full" />
           </div>
         </nav>
       </SheetContent>

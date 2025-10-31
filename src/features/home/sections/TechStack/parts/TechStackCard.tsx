@@ -1,5 +1,6 @@
 import { motion, easeOut } from 'framer-motion';
 import type { Variants } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import { skillIcons } from '../data';
 import type { TechStackCategory } from '../types';
@@ -20,7 +21,9 @@ type TechStackCardProps = {
 };
 
 export const TechStackCard = ({ category, index }: TechStackCardProps) => {
+  const { t } = useTranslation();
   const CategoryIcon = category.icon;
+  const title = t(category.titleKey, { defaultValue: category.defaultTitle });
 
   return (
     <motion.article
@@ -34,7 +37,7 @@ export const TechStackCard = ({ category, index }: TechStackCardProps) => {
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted/60 text-primary">
             <CategoryIcon className="h-5 w-5" strokeWidth={1.6} />
           </span>
-          <h3 className="text-lg font-semibold text-foreground md:text-xl">{category.title}</h3>
+          <h3 className="text-lg font-semibold text-foreground md:text-xl">{title}</h3>
         </div>
         <ul className="flex flex-wrap gap-3">
           {category.items.map((item) => (

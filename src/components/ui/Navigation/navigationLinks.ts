@@ -1,3 +1,6 @@
+import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 import GitHubLogoPng from '@/assets/footer/githubLogo.png';
 import XLogoPng from '@/assets/footer/xLogo.png';
 import QiitaLogoPng from '@/assets/footer/qiitaLogo.png';
@@ -26,19 +29,55 @@ const buildFullPath = (slug: string) => {
   return `${basePath}${slug}`;
 };
 
-const sectionDefinitions: Array<Omit<SectionLink, 'to' | 'fullPath'> & { slug: string }> = [
-  { label: 'ホーム', slug: '/', sectionId: 'top' },
-  { label: 'わたしについて', slug: '/about-me', sectionId: 'about' },
-  { label: '技術スタック', slug: '/tech-stack', sectionId: 'tech-stack' },
-  { label: 'ポートフォリオ一覧', slug: '/projects', sectionId: 'portfolio' },
-  { label: '今までのキャリア', slug: '/career', sectionId: 'career' },
+type SectionDefinition = {
+  labelKey: string;
+  defaultLabel: string;
+  slug: string;
+  sectionId: string;
+};
+
+const sectionDefinitions: SectionDefinition[] = [
+  { labelKey: 'navigation.sections.home', defaultLabel: 'ホーム', slug: '/', sectionId: 'top' },
+  {
+    labelKey: 'navigation.sections.about',
+    defaultLabel: 'わたしについて',
+    slug: '/about-me',
+    sectionId: 'about',
+  },
+  {
+    labelKey: 'navigation.sections.techStack',
+    defaultLabel: '技術スタック',
+    slug: '/tech-stack',
+    sectionId: 'tech-stack',
+  },
+  {
+    labelKey: 'navigation.sections.portfolio',
+    defaultLabel: 'ポートフォリオ一覧',
+    slug: '/projects',
+    sectionId: 'portfolio',
+  },
+  {
+    labelKey: 'navigation.sections.career',
+    defaultLabel: '今までのキャリア',
+    slug: '/career',
+    sectionId: 'career',
+  },
 ];
 
-export const sectionLinks: SectionLink[] = sectionDefinitions.map(({ slug, ...rest }) => ({
-  ...rest,
-  to: slug,
-  fullPath: buildFullPath(slug),
-}));
+const buildSectionLinks = (t: TFunction): SectionLink[] =>
+  sectionDefinitions.map(({ labelKey, defaultLabel, slug, sectionId }) => ({
+    label: t(labelKey, { defaultValue: defaultLabel }),
+    to: slug,
+    fullPath: buildFullPath(slug),
+    sectionId,
+  }));
+
+export const getSectionLinks = (t: TFunction): SectionLink[] => buildSectionLinks(t);
+
+export const useSectionLinks = (): SectionLink[] => {
+  const { t, i18n } = useTranslation();
+  return useMemo(() => buildSectionLinks(t), [t, i18n.language]);
+};
 
 export const snsLinks: SnsLink[] = [
   { label: 'GitHub', href: 'https://github.com/Taira0222', icon: GitHubLogoPng },

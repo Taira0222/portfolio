@@ -1,9 +1,21 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import { TechStackCard } from './parts/TechStackCard';
 import { techStack } from './data';
 
+const defaultContent = {
+  eyebrow: 'Tech Stack',
+  title: '私の技術スタック',
+  description: 'フロントエンド、バックエンド、インフラまでフルスタックで対応可能です。',
+};
+
 export const TechStack = () => {
+  const { t } = useTranslation();
+  const eyebrow = t('techStack.eyebrow', { defaultValue: defaultContent.eyebrow });
+  const title = t('techStack.title', { defaultValue: defaultContent.title });
+  const description = t('techStack.description', { defaultValue: defaultContent.description });
+
   return (
     <motion.section
       id="tech-stack"
@@ -19,16 +31,16 @@ export const TechStack = () => {
       <div className="container mx-auto max-w-6xl px-6 md:px-10">
         <div className="flex flex-col items-center gap-4 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-            Tech Stack
+            {eyebrow}
           </p>
           <h2
             id="tech-stack-heading"
             className="text-3xl font-bold tracking-tight text-foreground md:text-4xl"
           >
-            技術スタック
+            {title}
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            フロントエンド、バックエンド、インフラまでフルスタックで対応可能です。
+            {description}
           </p>
         </div>
         <motion.div
@@ -36,7 +48,7 @@ export const TechStack = () => {
           variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
         >
           {techStack.map((category, index) => (
-            <TechStackCard key={category.title} category={category} index={index} />
+            <TechStackCard key={category.titleKey} category={category} index={index} />
           ))}
         </motion.div>
       </div>

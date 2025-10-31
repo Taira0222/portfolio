@@ -10,7 +10,7 @@ i18n
   .use(LanguageDetector) // ブラウザの言語を検出する
   .use(initReactI18next) // React 用の i18next
   .init({
-    fallbackLng: 'en',
+    fallbackLng: 'ja',
     debug: true,
     interpolation: {
       escapeValue: false,
@@ -19,7 +19,7 @@ i18n
       loadPath: `${basePath}locales/{{lng}}/{{ns}}.json`, // 翻訳ファイルの場所を指定
     },
     detection: {
-      order: ['localStorage', 'navigator'], // 言語判定の優先度
+      order: ['localStorage'], // 言語判定の優先度
       caches: ['localStorage'], // 選択言語をローカルに保持
     },
   });
