@@ -1,4 +1,5 @@
 import { Globe, Github, Newspaper } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/ui/Button/button';
 import {
@@ -9,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 
 import type { PortfolioCtaType, PortfolioItem } from '../../constants/data';
+import { useLocalizedPortfolioItem } from '../../hooks/useLocalizedPortfolioItem';
 
 type PortfolioCardDialogProps = {
   item: PortfolioItem;
@@ -29,16 +31,21 @@ const CTA_VARIANT: Record<PortfolioCtaType, 'default' | 'outline' | 'secondary'>
 };
 
 export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
+  const { t } = useTranslation();
+  const { title, summary, highlights, ctaLabels } = useLocalizedPortfolioItem(item);
+  const technologiesLabel = t('portfolio.labels.technologies', { defaultValue: '使用技術' });
+  const highlightsLabel = t('portfolio.labels.highlights', { defaultValue: 'ハイライト' });
+
   return (
     <DialogContent className="max-w-2xl space-y-6">
       <DialogHeader className="space-y-2 text-left">
-        <DialogTitle className="text-3xl font-bold tracking-tight">{item.title}</DialogTitle>
+        <DialogTitle className="text-3xl font-bold tracking-tight">{title}</DialogTitle>
         <DialogDescription asChild className="space-y-2">
           <div>
             <span className="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-secondary-foreground/80">
               {item.category}
             </span>
-            <p className="text-sm text-foreground">{item.summary}</p>
+            <p className="text-sm text-foreground">{summary}</p>
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
               {item.meta.timeline} / {item.meta.role}
             </p>
@@ -48,7 +55,7 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
       <div className="space-y-6">
         <section className="space-y-2">
           <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            使用技術
+            {technologiesLabel}
           </h3>
           <div className="flex flex-wrap gap-2">
             {item.technologies.map((tech) => (
@@ -63,10 +70,10 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
         </section>
         <section className="space-y-2">
           <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-            ハイライト
+            {highlightsLabel}
           </h3>
           <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
-            {item.highlights.map((highlight) => (
+            {highlights.map((highlight) => (
               <li key={highlight} className="flex gap-2">
                 <span
                   className="mt-1 size-1.5 shrink-0 rounded-full bg-primary"
@@ -83,8 +90,9 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
               Links
             </h3>
             <div className="flex flex-wrap gap-3">
-              {item.ctas.slice(0, MAX_DISPLAYED_CTAS).map((cta) => {
+              {item.ctas.slice(0, MAX_DISPLAYED_CTAS).map((cta, index) => {
                 const Icon = CTA_ICON[cta.type];
+                const label = ctaLabels[index] ?? cta.label;
                 return (
                   <Button
                     key={`${cta.type}-${cta.href}`}
@@ -95,7 +103,7 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
                   >
                     <a href={cta.href} target="_blank" rel="noreferrer noopener">
                       <Icon className="size-4" aria-hidden="true" />
-                      {cta.label}
+                      {label}
                     </a>
                   </Button>
                 );

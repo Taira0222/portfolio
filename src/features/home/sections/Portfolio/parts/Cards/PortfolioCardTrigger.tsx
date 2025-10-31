@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import type { PortfolioItem } from '../../constants/data';
 import { cn } from '@/lib/utils';
+import { useLocalizedPortfolioItem } from '../../hooks/useLocalizedPortfolioItem';
 
 type PortfolioCardTriggerProps = {
   item: PortfolioItem;
@@ -10,6 +11,8 @@ type PortfolioCardTriggerProps = {
 
 export const PortfolioCardTrigger = forwardRef<ElementRef<typeof Card>, PortfolioCardTriggerProps>(
   ({ item, className, ...props }, ref) => {
+    const { title, summary, imageAlt } = useLocalizedPortfolioItem(item);
+
     return (
       <Card
         ref={ref}
@@ -32,9 +35,9 @@ export const PortfolioCardTrigger = forwardRef<ElementRef<typeof Card>, Portfoli
           </div>
           <div className="space-y-2">
             <CardTitle className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-              {item.title}
+              {title}
             </CardTitle>
-            <CardDescription>{item.summary}</CardDescription>
+            <CardDescription>{summary}</CardDescription>
           </div>
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
             {item.meta.timeline} / {item.meta.role}
@@ -45,13 +48,13 @@ export const PortfolioCardTrigger = forwardRef<ElementRef<typeof Card>, Portfoli
             <div className="aspect-[16/9] w-full bg-secondary/10">
               <img
                 src={item.image.src}
-                alt={item.image.alt}
+                alt={imageAlt}
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
             </div>
             <figcaption className="px-4 py-3 text-xs text-muted-foreground">
-              {item.image.alt}
+              {imageAlt}
             </figcaption>
           </figure>
         </CardContent>

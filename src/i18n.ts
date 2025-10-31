@@ -10,8 +10,8 @@ i18n
   .use(LanguageDetector) // ブラウザの言語を検出する
   .use(initReactI18next) // React 用の i18next
   .init({
-    fallbackLng: 'en',
-    debug: true,
+    fallbackLng: 'ja',
+    debug: import.meta.env.VITE_DEV === 'true', // 開発環境でのみデバッグモードを有効化
     interpolation: {
       escapeValue: false,
     },

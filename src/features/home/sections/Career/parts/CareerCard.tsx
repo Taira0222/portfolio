@@ -1,4 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import { Card, CardContent } from '@/components/ui/card';
 import type { CareerMilestone } from '../types';
@@ -11,6 +12,14 @@ type CareerCardProps = {
 
 export const CareerCard = ({ milestone, variants }: CareerCardProps) => {
   const { ref, controls, initial } = useRevealAnimation({ amount: 0.4 });
+  const { t } = useTranslation();
+  const baseKey = `career.timeline.${milestone.id}`;
+  const date = t(`${baseKey}.date`, { defaultValue: milestone.date });
+  const title = t(`${baseKey}.title`, { defaultValue: milestone.title });
+  const description = t(`${baseKey}.description`, { defaultValue: milestone.description });
+  const imageAlt: string = milestone.image
+    ? t(`${baseKey}.imageAlt`, { defaultValue: milestone.image.alt })
+    : '';
 
   return (
     <motion.article
@@ -25,17 +34,17 @@ export const CareerCard = ({ milestone, variants }: CareerCardProps) => {
       </span>
 
       <div className="flex flex-col justify-start text-sm text-muted-foreground md:text-base">
-        <time className="text-base font-semibold text-primary md:text-lg">{milestone.date}</time>
+        <time className="text-base font-semibold text-primary md:text-lg">{date}</time>
       </div>
 
       <Card className="rounded-xl border border-border/40 bg-background/80 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/70 dark:bg-background/60">
         <CardContent className="flex flex-col gap-4 p-6">
           <div className="space-y-2">
             <h3 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
-              {milestone.title}
+              {title}
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-              {milestone.description}
+              {description}
             </p>
           </div>
           {milestone.image && (
@@ -43,7 +52,7 @@ export const CareerCard = ({ milestone, variants }: CareerCardProps) => {
               <div className="aspect-[21/9] w-full">
                 <img
                   src={milestone.image.src}
-                  alt={milestone.image.alt}
+                  alt={imageAlt}
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />

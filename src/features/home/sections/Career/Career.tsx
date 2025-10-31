@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import { CareerCard } from './parts/CareerCard';
 
@@ -8,6 +9,11 @@ import { careerTimeline } from './constants/data';
 
 export const Career = () => {
   const { ref: sectionRef, controls, initial } = useRevealAnimation({ amount: 0.1 });
+  const { t } = useTranslation();
+  const title = t('career.title', { defaultValue: '今までのキャリア' });
+  const description = t('career.description', {
+    defaultValue: '土木の公務員、学習塾起業、自社でのプロダクト開発など多岐にわたって経験してきました。',
+  });
 
   return (
     <motion.section
@@ -36,10 +42,10 @@ export const Career = () => {
             id="career-heading"
             className="text-3xl font-bold tracking-tight text-foreground md:text-4xl"
           >
-            今までのキャリア
+            {title}
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            土木の公務員、学習塾起業、自社でのプロダクト開発など多岐にわたって経験してきました。
+            {description}
           </p>
         </motion.div>
 
