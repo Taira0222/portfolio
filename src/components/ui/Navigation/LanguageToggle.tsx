@@ -34,7 +34,7 @@ export const LanguageToggle = ({ className, variant = 'default' }: LanguageToggl
   }, [i18n.language, i18n.resolvedLanguage, t]);
 
   const handleToggle = useCallback(() => {
-    if (!nextLanguage || currentLanguage === nextLanguage) {
+    if (!nextLanguage) {
       return;
     }
 
