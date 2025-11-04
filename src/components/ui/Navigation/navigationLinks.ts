@@ -80,7 +80,7 @@ export const useSectionLinks = (): SectionLink[] => {
 };
 
 export const snsLinks: SnsLink[] = [
-  { label: 'GitHub', href: 'https://github.com/Taira0222', icon: GitHubLogoPng },
+  { label: 'GitHub', href: 'https://github.com/Taira0222/juku-cloud', icon: GitHubLogoPng },
   { label: 'X', href: 'https://x.com/Taira_En0222', icon: XLogoPng },
   { label: 'Qiita', href: 'https://qiita.com/taira0222', icon: QiitaLogoPng },
   {
