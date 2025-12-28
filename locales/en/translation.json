@@ -20,12 +20,11 @@
   },
   "about": {
     "eyebrow": "About Me",
-    "title": "A software engineer who found the value of product creation through entrepreneurship",
+    "title": "Self-Introduction",
     "paragraphs": [
-      "I’m Taira, a software engineer based in the U.S. with a background in civil engineering and education entrepreneurship.",
-      "I majored in civil engineering at university and worked for several years at the Tokyo Metropolitan Government before founding a private tutoring school.",
-      "Through managing the school and teaching students, I came to strongly feel that technology has the power to turn ideas into reality, which led me to start learning programming.",
-      "Currently, I’m focusing on web development, and developing an education management app called \"Juku Cloud\" to address the issue of teacher-dependent instruction that I experienced during my three years of running the school."
+      "I'm Taira, a software engineer based in the U.S.",
+      "I majored in civil engineering at university and worked for several years at the Tokyo Metropolitan Government before founding a private tutoring school. Through managing the school and teaching students, I came to strongly feel that technology has the power to solve real problems, which led me to start learning programming. To address the issue of teacher-dependent instruction that I experienced during my years of running the school, I'm developing an education management app called \"Juku Cloud\" as a personal project.",
+      "I am currently working as a freelance software engineer for a Japanese company on a fully remote basis, primarily developing applications for the caregiving industry."
     ]
   },
   "techStack": {
