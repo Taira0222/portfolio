@@ -8,6 +8,7 @@ import quitJobPng from '@/assets/career/quit-job.png';
 import moveToUsPng from '@/assets/career/move-to-us.png';
 import programmingPng from '@/assets/career/programming.png';
 import jukuCloudPng from '@/assets/career/juku-cloud.png';
+import fullstackPng from '@/assets/career/fullstack.png';
 
 export const careerTimeline: CareerMilestone[] = [
   {
@@ -106,6 +107,17 @@ export const careerTimeline: CareerMilestone[] = [
     image: {
       src: jukuCloudPng,
       alt: 'Juku Cloud の宣材写真',
+    },
+  },
+  {
+    id: 'start-freelance-work',
+    date: '2026年1月',
+    title: 'フルスタックエンジニアとして業務委託開始予定',
+    description:
+      '国内企業にて、フルスタックエンジニアとして業務委託での参画が決定。これまでの独学での学習経験と個人開発の実績を活かし、実務でのエンジニアキャリアをスタートさせます。',
+    image: {
+      src: fullstackPng,
+      alt: 'フルスタック開発のイメージ',
     },
   },
 ];

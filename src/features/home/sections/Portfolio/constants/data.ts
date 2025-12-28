@@ -52,7 +52,11 @@ export const portfolioItems: PortfolioItem[] = [
       'CI/CDでテスト〜デプロイ自動化',
     ],
     ctas: [
-      { label: 'Live', href: 'https://www.juku-cloud.com', type: 'live' },
+      {
+        label: 'Repo',
+        href: 'https://github.com/taira0222/juku-cloud',
+        type: 'repo',
+      },
       {
         label: 'Repo (Frontend)',
         href: 'https://github.com/taira0222/juku-cloud-frontend',
@@ -162,12 +166,7 @@ export const portfolioItems: PortfolioItem[] = [
       'Qiita APIとX APIの連携実装',
     ],
     ctas: [
-      { label: 'Repo', href: 'https://github.com/Taira0222/qiita-content', type: 'repo' },
-      {
-        label: 'Article',
-        href: 'https://qiita.com/Taira0222/items/857177b14f469040d874',
-        type: 'article',
-      },
+      { label: 'Repo', href: 'https://github.com/Taira0222/content-publish-pipeline', type: 'repo' },
     ],
     image: {
       src: gitHubLogoSvg,

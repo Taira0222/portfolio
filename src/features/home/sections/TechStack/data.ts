@@ -13,25 +13,33 @@ import {
 } from 'lucide-react';
 
 import awsIcon from '@/assets/skill-icons/aws-dark.svg';
+import djangoIcon from '@/assets/skill-icons/django.svg';
 import dockerIcon from '@/assets/skill-icons/docker.svg';
 import githubActionsIcon from '@/assets/skill-icons/github-actions-dark.svg';
+import mysqlIcon from '@/assets/skill-icons/mysql-dark.svg';
 import postgresqlIcon from '@/assets/skill-icons/postgresql-dark.svg';
+import pythonIcon from '@/assets/skill-icons/python-dark.svg';
 import railsIcon from '@/assets/skill-icons/rails.svg';
 import reactIcon from '@/assets/skill-icons/react-dark.svg';
 import rubyIcon from '@/assets/skill-icons/ruby.svg';
 import typescriptIcon from '@/assets/skill-icons/typescript.svg';
 import viteIcon from '@/assets/skill-icons/vite-dark.svg';
 import vitestIcon from '@/assets/skill-icons/vitest-dark.svg';
+import vueIcon from '@/assets/skill-icons/vue-dark.svg';
 
 import type { SkillIconSlug, TechStackCategory } from './types';
 
 export const skillIcons: Record<SkillIconSlug, { src: string; alt: string }> = {
   react: { src: reactIcon, alt: 'React logo' },
+  vue: { src: vueIcon, alt: 'Vue.js logo' },
   vite: { src: viteIcon, alt: 'Vite logo' },
   typescript: { src: typescriptIcon, alt: 'TypeScript logo' },
   ruby: { src: rubyIcon, alt: 'Ruby logo' },
   rails: { src: railsIcon, alt: 'Rails logo' },
+  python: { src: pythonIcon, alt: 'Python logo' },
+  django: { src: djangoIcon, alt: 'Django logo' },
   postgresql: { src: postgresqlIcon, alt: 'PostgreSQL logo' },
+  mysql: { src: mysqlIcon, alt: 'MySQL logo' },
   docker: { src: dockerIcon, alt: 'Docker logo' },
   githubActions: { src: githubActionsIcon, alt: 'GitHub Actions logo' },
   aws: { src: awsIcon, alt: 'AWS logo' },
@@ -50,6 +58,11 @@ export const techStack: TechStackCategory[] = [
         name: 'React',
         icon: 'react',
         badgeClassName: 'border-[#61dafb]/40 bg-[#61dafb]/10 text-[#0b6fa4] dark:text-[#61dafb]',
+      },
+      {
+        name: 'Vue.js',
+        icon: 'vue',
+        badgeClassName: 'border-[#42b883]/40 bg-[#42b883]/10 text-[#2d7d5e] dark:text-[#42b883]',
       },
       {
         name: 'Vite',
@@ -78,6 +91,16 @@ export const techStack: TechStackCategory[] = [
         icon: 'rails',
         badgeClassName: 'border-[#b22222]/40 bg-[#b22222]/12 text-[#7f1515] dark:text-[#ff8c8c]',
       },
+      {
+        name: 'Python',
+        icon: 'python',
+        badgeClassName: 'border-[#3776ab]/40 bg-[#3776ab]/10 text-[#1f4a6d] dark:text-[#4b8bbe]',
+      },
+      {
+        name: 'Django',
+        icon: 'django',
+        badgeClassName: 'border-[#092e20]/40 bg-[#092e20]/10 text-[#051610] dark:text-[#44b78b]',
+      },
     ],
   },
   {
@@ -89,6 +112,11 @@ export const techStack: TechStackCategory[] = [
         name: 'PostgreSQL',
         icon: 'postgresql',
         badgeClassName: 'border-[#336791]/40 bg-[#336791]/10 text-[#1f485f] dark:text-[#6fa8d8]',
+      },
+      {
+        name: 'MySQL',
+        icon: 'mysql',
+        badgeClassName: 'border-[#00758f]/40 bg-[#00758f]/10 text-[#004d5f] dark:text-[#4da8ba]',
       },
     ],
   },

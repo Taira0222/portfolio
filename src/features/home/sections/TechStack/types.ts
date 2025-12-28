@@ -2,11 +2,15 @@ import type { LucideIcon } from 'lucide-react';
 
 export type SkillIconSlug =
   | 'react'
+  | 'vue'
   | 'vite'
   | 'typescript'
   | 'ruby'
   | 'rails'
+  | 'python'
+  | 'django'
   | 'postgresql'
+  | 'mysql'
   | 'docker'
   | 'githubActions'
   | 'aws'
