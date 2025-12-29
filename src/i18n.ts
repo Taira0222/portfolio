@@ -11,6 +11,8 @@ i18n
   .use(initReactI18next) // React 用の i18next
   .init({
     fallbackLng: 'ja',
+    ns: ['translation'],
+    defaultNS: 'translation',
     debug: import.meta.env.VITE_DEV === 'true', // 開発環境でのみデバッグモードを有効化
     interpolation: {
       escapeValue: false,

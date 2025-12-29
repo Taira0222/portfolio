@@ -164,7 +164,7 @@
     }
   },
   "blog": {
-    "eyebrow": "Tech Blog",
+    "eyebrow": "技術ブログ",
     "title": "最新の技術記事",
     "description": "Qiitaで公開している技術記事の最新3件です。",
     "readMore": "記事を読む",
