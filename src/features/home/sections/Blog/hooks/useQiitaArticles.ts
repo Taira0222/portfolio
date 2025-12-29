@@ -25,6 +25,15 @@ import type { QiitaArticle } from '../types';
  * );
  * ```
  */
+/**
+ * unknown 型のエラーを Error 型に変換する
+ */
+const toError = (error: unknown): Error | null => {
+  if (error === null || error === undefined) return null;
+  if (error instanceof Error) return error;
+  return new Error(String(error));
+};
+
 export const useQiitaArticles = () => {
   const { data, isLoading, error } = useQiitaArticlesQuery();
 
@@ -34,6 +43,6 @@ export const useQiitaArticles = () => {
     /** ローディング状態 */
     isLoading,
     /** エラー情報 */
-    error: error as Error | null,
+    error: toError(error),
   };
 };

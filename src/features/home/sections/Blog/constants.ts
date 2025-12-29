@@ -5,9 +5,13 @@ export const QIITA_API_URL = 'https://qiita.com/api/v2';
 
 /**
  * Qiita ユーザー名
- * TODO: 環境変数化 (VITE_QIITA_USERNAME)
+ * 環境変数 VITE_QIITA_USERNAME から取得
  */
-export const QIITA_USERNAME = import.meta.env.VITE_QIITA_USERNAME || 'your-username';
+const qiitaUsername = import.meta.env.VITE_QIITA_USERNAME;
+if (!qiitaUsername && import.meta.env.DEV) {
+  console.warn('[Blog] VITE_QIITA_USERNAME is not set. Please check your .env file.');
+}
+export const QIITA_USERNAME = qiitaUsername || '';
 
 /**
  * 1ページあたりの記事取得件数
