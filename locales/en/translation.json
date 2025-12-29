@@ -5,6 +5,7 @@
       "about": "About Me",
       "techStack": "Tech Stack",
       "portfolio": "Portfolio",
+      "blog": "Blog",
       "career": "Career History"
     },
     "sns": "Social Media",
@@ -160,5 +161,15 @@
         "imageAlt": "Promotional image for Juku Cloud"
       }
     }
+  },
+  "blog": {
+    "eyebrow": "Tech Blog",
+    "title": "Latest Articles",
+    "description": "The latest 3 articles published on Qiita.",
+    "readMore": "Read Article",
+    "viewAllArticles": "View All Articles",
+    "loading": "Loading articles...",
+    "error": "Failed to load articles",
+    "noArticles": "No articles found"
   }
 }
