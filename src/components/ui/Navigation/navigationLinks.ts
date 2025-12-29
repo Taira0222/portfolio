@@ -57,6 +57,12 @@ const sectionDefinitions: SectionDefinition[] = [
     sectionId: 'portfolio',
   },
   {
+    labelKey: 'navigation.sections.blog',
+    defaultLabel: '技術ブログ',
+    slug: '/blog',
+    sectionId: 'blog',
+  },
+  {
     labelKey: 'navigation.sections.career',
     defaultLabel: '今までのキャリア',
     slug: '/career',
@@ -75,8 +81,8 @@ const buildSectionLinks = (t: TFunction): SectionLink[] =>
 export const getSectionLinks = (t: TFunction): SectionLink[] => buildSectionLinks(t);
 
 export const useSectionLinks = (): SectionLink[] => {
-  const { t, i18n } = useTranslation();
-  return useMemo(() => buildSectionLinks(t), [t, i18n.language]);
+  const { t } = useTranslation();
+  return useMemo(() => buildSectionLinks(t), [t]);
 };
 
 export const snsLinks: SnsLink[] = [

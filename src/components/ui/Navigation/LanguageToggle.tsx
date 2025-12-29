@@ -16,13 +16,12 @@ const normalizeLanguageCode = (language: string | undefined) => {
 export const LanguageToggle = ({ className, variant = 'default' }: LanguageToggleProps) => {
   const { t, i18n } = useTranslation();
 
-  const { currentLanguage, nextLanguage, buttonLabel, ariaLabel } = useMemo(() => {
+  const { nextLanguage, buttonLabel, ariaLabel } = useMemo(() => {
     const resolved = normalizeLanguageCode(i18n.resolvedLanguage ?? i18n.language);
     const isJapanese = resolved === 'ja';
     const next = isJapanese ? 'en' : 'ja';
 
     return {
-      currentLanguage: resolved,
       nextLanguage: next,
       buttonLabel: isJapanese
         ? t('navigation.toggle.toEnglish', { defaultValue: 'English' })
@@ -39,7 +38,7 @@ export const LanguageToggle = ({ className, variant = 'default' }: LanguageToggl
     }
 
     void i18n.changeLanguage(nextLanguage);
-  }, [currentLanguage, i18n, nextLanguage]);
+  }, [i18n, nextLanguage]);
 
   const baseClassName =
     variant === 'navigation'

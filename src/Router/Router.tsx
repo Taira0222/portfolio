@@ -5,8 +5,8 @@ import { getSectionLinks } from '@/components/ui/Navigation/navigationLinks';
 import { useTranslation } from 'react-i18next';
 
 export const Router = () => {
-  const { t, i18n } = useTranslation();
-  const sectionLinks = useMemo(() => getSectionLinks(t), [t, i18n.language]);
+  const { t } = useTranslation();
+  const sectionLinks = useMemo(() => getSectionLinks(t), [t]);
   const homeLink =
     sectionLinks.find((link) => link.sectionId === 'top') ?? sectionLinks[0];
   const homePath = homeLink?.to || '/';
