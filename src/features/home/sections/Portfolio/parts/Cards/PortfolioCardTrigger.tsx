@@ -17,7 +17,7 @@ export const PortfolioCardTrigger = forwardRef<ElementRef<typeof Card>, Portfoli
       <Card
         ref={ref}
         className={cn(
-          'group mx-auto h-full cursor-pointer overflow-hidden border-border/60 bg-card/90 shadow-lg shadow-black/5 backdrop-blur transition hover:border-primary/50 hover:shadow-primary/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary',
+          'group mx-auto h-full cursor-pointer overflow-hidden border-border/60 bg-card/90 shadow-lg shadow-black/5 backdrop-blur transition hover:border-brand/50 hover:shadow-brand/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand',
           className,
         )}
         {...props}

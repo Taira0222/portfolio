@@ -29,7 +29,7 @@ export const BlogCard = ({ article }: BlogCardProps) => {
           </p>
         </CardContent>
         <CardFooter className="pt-3">
-          <span className="flex items-center gap-2 text-sm font-medium text-primary transition-colors group-hover:text-primary/80">
+          <span className="flex items-center gap-2 text-sm font-medium text-brand transition-colors group-hover:text-brand/80">
             {t('blog.readMore')}
             <ExternalLink className="h-4 w-4" />
           </span>

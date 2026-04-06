@@ -19,6 +19,9 @@
       "switchToJapanese": "日本語表示に切り替える"
     }
   },
+  "hero": {
+    "subtitle": "Full-Stack Software Engineer"
+  },
   "about": {
     "eyebrow": "私について",
     "title": "自己紹介",

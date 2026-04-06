@@ -20,11 +20,20 @@ export const headingVariants: Variants = {
   },
 };
 
+export const subtitleVariants: Variants = {
+  initial: { opacity: 0, y: 24 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: 0.4, ease: HERO_EASING },
+  },
+};
+
 export const keywordContainerVariants: Variants = {
   initial: { opacity: 0, y: 24 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, delay: 0.6, ease: HERO_EASING },
+    transition: { duration: 0.8, delay: 0.9, ease: HERO_EASING },
   },
 };

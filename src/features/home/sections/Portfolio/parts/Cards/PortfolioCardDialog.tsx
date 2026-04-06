@@ -76,7 +76,7 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
             {highlights.map((highlight) => (
               <li key={highlight} className="flex gap-2">
                 <span
-                  className="mt-1 size-1.5 shrink-0 rounded-full bg-primary"
+                  className="mt-1 size-1.5 shrink-0 rounded-full bg-brand"
                   aria-hidden="true"
                 />
                 <span className="flex-1">{highlight}</span>

@@ -28,7 +28,7 @@ const socialLinks: SocialLink[] = [
 const socialButtonBaseClass =
   'group flex h-11 w-11 items-center justify-center rounded-full border border-border/50 bg-background/70 shadow-sm transition';
 const socialButtonInteractiveClass =
-  'hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-primary/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
+  'hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-brand/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand';
 
 export const Footer = () => {
   return (
@@ -40,7 +40,7 @@ export const Footer = () => {
               Stay Connected
             </p>
             <p className="text-sm text-muted-foreground md:text-base">
-              © 2025 Taira. All rights reserved.
+              © {new Date().getFullYear()} Taira. All rights reserved.
             </p>
           </div>
 

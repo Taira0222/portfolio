@@ -21,8 +21,8 @@ export const About = () => {
       <div className="pointer-events-none absolute inset-x-8 bottom-0 h-20 translate-y-1/2 bg-gradient-to-b from-transparent via-secondary/20 to-secondary/30 dark:via-secondary/15 dark:to-secondary/20" />
 
       <div className="container mx-auto max-w-6xl px-6 md:px-10">
-        <div className="relative rounded-3xl border border-border/50 bg-card/80 p-8 shadow-xl shadow-black/5 backdrop-blur md:p-12 dark:bg-background/70 dark:shadow-black/20">
-          <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-secondary/10 to-transparent dark:from-primary/10 dark:via-secondary/20" />
+        <div className="relative rounded-xl border border-border/50 bg-card/80 p-8 shadow-xl shadow-black/5 backdrop-blur md:p-12 dark:bg-background/70 dark:shadow-black/20">
+          <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 via-secondary/10 to-transparent dark:from-primary/10 dark:via-secondary/20" />
           <div className="relative grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
             <AboutImage />
             <AboutContent variants={fadeUp} />

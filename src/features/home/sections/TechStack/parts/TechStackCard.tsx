@@ -27,7 +27,7 @@ export const TechStackCard = ({ category, index }: TechStackCardProps) => {
 
   return (
     <motion.article
-      className="relative h-full overflow-hidden rounded-3xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-black/5 backdrop-blur-sm dark:bg-background/70 dark:shadow-black/30"
+      className="relative h-full overflow-hidden rounded-xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-black/5 backdrop-blur-sm dark:bg-background/70 dark:shadow-black/30"
       variants={fadeIn}
       custom={index}
     >
