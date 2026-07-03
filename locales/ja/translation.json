@@ -5,7 +5,6 @@
       "about": "わたしについて",
       "techStack": "技術スタック",
       "portfolio": "ポートフォリオ一覧",
-      "blog": "技術ブログ",
       "career": "今までのキャリア"
     },
     "sns": "SNS",
@@ -165,15 +164,5 @@
         "imageAlt": "Juku Cloud の宣材写真"
       }
     }
-  },
-  "blog": {
-    "eyebrow": "技術ブログ",
-    "title": "最新の技術記事",
-    "description": "Qiitaで公開している技術記事の最新3件です。",
-    "readMore": "記事を読む",
-    "viewAllArticles": "すべての記事を見る",
-    "loading": "記事を読み込み中...",
-    "error": "記事の読み込みに失敗しました",
-    "noArticles": "記事が見つかりませんでした"
   }
 }
