@@ -3,6 +3,7 @@ import todoAppSvg from '@/assets/portfolio/todo-app.svg';
 import qiitaLogoSvg from '@/assets/portfolio/Qiita.svg';
 import gitHubLogoSvg from '@/assets/portfolio/GitHub.svg';
 import portfolioPng from '@/assets/portfolio/portfolio.png';
+import { externalLinks } from '@/constants/externalLinks';
 export type PortfolioCategory = 'Web App' | 'Automation' | 'Article';
 
 export type PortfolioCtaType = 'live' | 'repo' | 'article';
@@ -54,17 +55,17 @@ export const portfolioItems: PortfolioItem[] = [
     ctas: [
       {
         label: 'Repo',
-        href: 'https://github.com/taira0222/juku-cloud',
+        href: externalLinks.projects.jukuCloud.repo,
         type: 'repo',
       },
       {
         label: 'Repo (Frontend)',
-        href: 'https://github.com/taira0222/juku-cloud-frontend',
+        href: externalLinks.projects.jukuCloud.repoFrontend,
         type: 'repo',
       },
       {
         label: 'Repo (Backend)',
-        href: 'https://github.com/taira0222/juku-cloud-backend',
+        href: externalLinks.projects.jukuCloud.repoBackend,
         type: 'repo',
       },
     ],
@@ -89,8 +90,8 @@ export const portfolioItems: PortfolioItem[] = [
       'shadcn/ui・Framer MotionでモダンなUI/UX実現',
     ],
     ctas: [
-      { label: 'Live', href: 'https://taira0222.github.io/portfolio/', type: 'live' },
-      { label: 'Repo', href: 'https://github.com/Taira0222/taira0222.github.io', type: 'repo' },
+      { label: 'Live', href: externalLinks.projects.portfolioSite.live, type: 'live' },
+      { label: 'Repo', href: externalLinks.projects.portfolioSite.repo, type: 'repo' },
     ],
     image: {
       src: portfolioPng,
@@ -113,8 +114,8 @@ export const portfolioItems: PortfolioItem[] = [
       'Google OAuthによる外部認証',
     ],
     ctas: [
-      { label: 'Live', href: 'https://todo-rails-application.onrender.com/', type: 'live' },
-      { label: 'Repo', href: 'https://github.com/Taira0222/todo-rails-application', type: 'repo' },
+      { label: 'Live', href: externalLinks.projects.todoRails.live, type: 'live' },
+      { label: 'Repo', href: externalLinks.projects.todoRails.repo, type: 'repo' },
     ],
     image: {
       src: todoAppSvg,
@@ -137,10 +138,14 @@ export const portfolioItems: PortfolioItem[] = [
       '初心者ならではの視点で基礎的な内容を解説',
     ],
     ctas: [
-      { label: 'Article (Profile)', href: 'https://qiita.com/taira0222', type: 'article' },
+      {
+        label: 'Article (Profile)',
+        href: externalLinks.projects.qiitaBlog.profile,
+        type: 'article',
+      },
       {
         label: '1年間毎日投稿達成',
-        href: 'https://qiita.com/Taira0222/items/c8ce0989bb048941e0ef',
+        href: externalLinks.projects.qiitaBlog.dailyPostAchievement,
         type: 'article',
       },
     ],
@@ -165,9 +170,7 @@ export const portfolioItems: PortfolioItem[] = [
       'サーバーのメンテナンス中でも、UIを介さず自動投稿可能',
       'Qiita APIとX APIの連携実装',
     ],
-    ctas: [
-      { label: 'Repo', href: 'https://github.com/Taira0222/content-publish-pipeline', type: 'repo' },
-    ],
+    ctas: [{ label: 'Repo', href: externalLinks.projects.contentPipeline.repo, type: 'repo' }],
     image: {
       src: gitHubLogoSvg,
       alt: 'GitHub ActionsでQiita & X自動投稿',

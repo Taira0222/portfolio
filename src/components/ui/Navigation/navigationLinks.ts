@@ -5,6 +5,7 @@ import GitHubLogoPng from '@/assets/footer/githubLogo.png';
 import XLogoPng from '@/assets/footer/xLogo.png';
 import QiitaLogoPng from '@/assets/footer/qiitaLogo.png';
 import LinkedinLogoPng from '@/assets/footer/linkedInLogo.png';
+import { externalLinks } from '@/constants/externalLinks';
 
 export type SectionLink = {
   label: string;
@@ -86,12 +87,12 @@ export const useSectionLinks = (): SectionLink[] => {
 };
 
 export const snsLinks: SnsLink[] = [
-  { label: 'GitHub', href: 'https://github.com/Taira0222/juku-cloud', icon: GitHubLogoPng },
-  { label: 'X', href: 'https://x.com/Taira_En0222', icon: XLogoPng },
-  { label: 'Qiita', href: 'https://qiita.com/taira0222', icon: QiitaLogoPng },
+  { label: 'GitHub', href: externalLinks.social.github, icon: GitHubLogoPng },
+  { label: 'X', href: externalLinks.social.x, icon: XLogoPng },
+  { label: 'Qiita', href: externalLinks.social.qiita, icon: QiitaLogoPng },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/taira-aikawa-engineer/',
+    href: externalLinks.social.linkedin,
     icon: LinkedinLogoPng,
   },
 ];

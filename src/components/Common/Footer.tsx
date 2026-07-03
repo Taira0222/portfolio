@@ -6,6 +6,7 @@ import QiitaLogoPng from '@/assets/footer/qiitaLogo.png';
 import LinkedinLogoPng from '@/assets/footer/linkedInLogo.png';
 import XLogoPng from '@/assets/footer/xLogo.png';
 import { useScrollTrigger } from '@/hooks/useScrollTrigger';
+import { externalLinks } from '@/constants/externalLinks';
 
 type SocialLink = {
   href: string;
@@ -14,11 +15,11 @@ type SocialLink = {
 };
 
 const socialLinks: SocialLink[] = [
-  { href: 'https://github.com/Taira0222', label: 'GitHub', icon: GitHubLogoPng },
-  { href: 'https://x.com/Taira_En0222', label: 'X', icon: XLogoPng },
-  { href: 'https://qiita.com/taira0222', label: 'Qiita', icon: QiitaLogoPng },
+  { href: externalLinks.social.github, label: 'GitHub', icon: GitHubLogoPng },
+  { href: externalLinks.social.x, label: 'X', icon: XLogoPng },
+  { href: externalLinks.social.qiita, label: 'Qiita', icon: QiitaLogoPng },
   {
-    href: 'https://www.linkedin.com/in/taira-aikawa-engineer/',
+    href: externalLinks.social.linkedin,
     label: 'LinkedIn',
     icon: LinkedinLogoPng,
   },

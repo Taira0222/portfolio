@@ -1,7 +1,9 @@
+import { externalLinks } from '@/constants/externalLinks';
+
 /**
  * Qiita API のベースURL
  */
-export const QIITA_API_URL = 'https://qiita.com/api/v2';
+export const QIITA_API_URL = externalLinks.qiitaApi.base;
 
 /**
  * Qiita ユーザー名
