@@ -15,13 +15,13 @@ export const Hero = () => {
 
   return (
     <motion.section
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden"
+      className="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden py-20 sm:min-h-[78vh]"
       variants={sectionVariants}
       initial="initial"
       animate="animate"
     >
       <HeroBackground />
-      <div className="container relative z-10 mx-auto -mt-25 px-4 text-center sm:mt-0">
+      <div className="container relative z-10 mx-auto px-4 text-center">
         <HeroHeading />
         <motion.p
           className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl"

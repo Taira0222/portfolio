@@ -27,12 +27,12 @@ export const TechStackCard = ({ category, index }: TechStackCardProps) => {
 
   return (
     <motion.article
-      className="relative h-full overflow-hidden rounded-xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-black/5 backdrop-blur-sm dark:bg-background/70 dark:shadow-black/30"
+      className="relative overflow-hidden rounded-xl border border-border/60 bg-card/80 p-6 shadow-lg shadow-black/5 backdrop-blur-sm dark:bg-background/70 dark:shadow-black/30"
       variants={fadeIn}
       custom={index}
     >
       <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
-      <div className="relative flex h-full flex-col gap-5">
+      <div className="relative flex flex-col gap-5">
         <div className="flex items-center gap-3">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted/60 text-primary">
             <CategoryIcon className="h-5 w-5" strokeWidth={1.6} />

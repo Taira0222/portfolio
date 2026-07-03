@@ -44,7 +44,7 @@ export const TechStack = () => {
           </p>
         </div>
         <motion.div
-          className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+          className="mt-14 grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3"
           variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
         >
           {techStack.map((category, index) => (
