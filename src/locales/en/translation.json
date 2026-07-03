@@ -161,6 +161,12 @@
         "title": "Released Juku Cloud (MVP)",
         "description": "To solve the issue of instruction relying on individual teachers, I built and launched “Juku Cloud (MVP),” an education management app that shares student traits in the cloud.",
         "imageAlt": "Promotional image for Juku Cloud"
+      },
+      "start-freelance-work": {
+        "date": "January 2026",
+        "title": "Starting freelance work as a full-stack engineer",
+        "description": "I have been engaged as a full-stack engineer on a freelance contract with a company in Japan. Building on my self-taught learning and personal development projects, I am beginning my professional career as an engineer.",
+        "imageAlt": "Illustration of full-stack development"
       }
     }
   }
