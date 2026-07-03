@@ -14,7 +14,7 @@
 - **状態管理**: React Hooks
 - **国際化**: i18next + react-i18next
   - i18next-browser-languagedetector
-  - i18next-http-backend
+  - 翻訳リソースはバンドルに同梱（src/locales/{ja,en}/translation.json）
 - **アイコン**: Lucide React
 - **ユーティリティ**:
   - clsx (条件付きクラス名)
