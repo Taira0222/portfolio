@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_BASE_URL: /portfolio/
-      VITE_QIITA_USERNAME: Taira0222
     steps:
       - uses: actions/checkout@v4
 
@@ -24,7 +23,6 @@ jobs:
       - name: Export Vite envs to GitHub Actions
         run: |
           echo "VITE_BASE_URL=${{ env.VITE_BASE_URL }}" >> $GITHUB_ENV
-          echo "VITE_QIITA_USERNAME=${{ env.VITE_QIITA_USERNAME }}" >> $GITHUB_ENV
 
       - run: npm ci
       - run: npm run build

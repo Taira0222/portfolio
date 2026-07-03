@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Footer } from '@/components/Common/Footer';
 import { Header } from '@/components/Common/Header';
 import { About } from './sections/About';
-import { Blog } from './sections/Blog';
 import { Career } from './sections/Career';
 import { Hero } from './sections/Hero';
 import { Portfolio } from './sections/Portfolio';
@@ -33,7 +32,6 @@ export const Home = ({ initialSection = 'top' }: HomeProps) => {
         <About />
         <TechStack />
         <Portfolio />
-        <Blog />
         <Career />
       </main>
       <Footer />

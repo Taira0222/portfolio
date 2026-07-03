@@ -58,12 +58,6 @@ const sectionDefinitions: SectionDefinition[] = [
     sectionId: 'portfolio',
   },
   {
-    labelKey: 'navigation.sections.blog',
-    defaultLabel: '技術ブログ',
-    slug: '/blog',
-    sectionId: 'blog',
-  },
-  {
     labelKey: 'navigation.sections.career',
     defaultLabel: '今までのキャリア',
     slug: '/career',
