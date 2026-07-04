@@ -23,12 +23,16 @@
     }
   },
   "hero": {
-    "eyebrow": "Bar Taira — Est. 2019",
     "subtitle": "Full-Stack Software Engineer"
   },
   "about": {
-    "eyebrow": "私について",
+    "eyebrow": "About the Owner",
     "title": "自己紹介",
+    "profile": [
+      { "label": "拠点", "value": "アメリカ（フルリモート）" },
+      { "label": "経歴", "value": "土木 × 教育 × ソフトウェア" },
+      { "label": "代表作", "value": "Juku Cloud（教育SaaS）" }
+    ],
     "paragraphs": [
       "アメリカ在住のソフトウェアエンジニア、Tairaです。",
       "大学では土木工学を専攻し、東京都の技術職として数年勤務した後、個別指導塾を起業しました。",

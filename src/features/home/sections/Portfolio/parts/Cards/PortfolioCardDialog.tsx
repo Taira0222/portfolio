@@ -37,31 +37,38 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
   const highlightsLabel = t('portfolio.labels.highlights', { defaultValue: 'ハイライト' });
 
   return (
-    <DialogContent className="max-w-2xl space-y-6">
+    <DialogContent className="max-w-2xl space-y-6 outline outline-1 -outline-offset-8 outline-brass/25">
       <DialogHeader className="space-y-2 text-left">
-        <DialogTitle className="text-3xl font-bold tracking-tight">{title}</DialogTitle>
+        <DialogTitle className="font-display text-3xl font-bold tracking-tight">
+          {title}
+        </DialogTitle>
         <DialogDescription asChild className="space-y-2">
           <div>
-            <span className="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.28em] text-secondary-foreground/80">
+            <span className="text-xs font-semibold uppercase tracking-[0.28em] text-brass">
               {item.category}
             </span>
             <p className="text-sm text-foreground">{summary}</p>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-              {item.meta.timeline} / {item.meta.role}
+            <p className="flex items-baseline gap-3 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+              <span className="whitespace-nowrap">{item.meta.timeline}</span>
+              <span
+                className="min-w-[16px] flex-1 translate-y-[-3px] border-b border-dotted border-border/60"
+                aria-hidden="true"
+              />
+              <span className="whitespace-nowrap">{item.meta.role}</span>
             </p>
           </div>
         </DialogDescription>
       </DialogHeader>
       <div className="space-y-6">
         <section className="space-y-2">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-brass">
             {technologiesLabel}
           </h3>
           <div className="flex flex-wrap gap-2">
             {item.technologies.map((tech) => (
               <span
                 key={tech}
-                className="inline-flex items-center rounded-full border border-border/60 bg-background/80 px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm"
+                className="inline-flex items-center rounded-full border border-brass/40 bg-background/60 px-3 py-1 text-xs font-medium text-foreground/80 shadow-sm"
               >
                 {tech}
               </span>
@@ -69,16 +76,15 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
           </div>
         </section>
         <section className="space-y-2">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-brass">
             {highlightsLabel}
           </h3>
           <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
             {highlights.map((highlight) => (
-              <li key={highlight} className="flex gap-2">
-                <span
-                  className="mt-1 size-1.5 shrink-0 rounded-full bg-brand"
-                  aria-hidden="true"
-                />
+              <li key={highlight} className="flex gap-2.5">
+                <span className="mt-1 text-[8px] leading-none text-brass" aria-hidden="true">
+                  ◆
+                </span>
                 <span className="flex-1">{highlight}</span>
               </li>
             ))}
@@ -86,9 +92,7 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
         </section>
         {item.ctas.length > 0 ? (
           <section className="space-y-2">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-              Links
-            </h3>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-brass">Links</h3>
             <div className="flex flex-wrap gap-3">
               {item.ctas.slice(0, MAX_DISPLAYED_CTAS).map((cta, index) => {
                 const Icon = CTA_ICON[cta.type];

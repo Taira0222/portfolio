@@ -17,34 +17,41 @@ export const PortfolioCardTrigger = forwardRef<ElementRef<typeof Card>, Portfoli
       <Card
         ref={ref}
         className={cn(
-          'group mx-auto h-full cursor-pointer overflow-hidden border-border/60 bg-card/90 shadow-lg shadow-black/5 backdrop-blur transition hover:border-brand/50 hover:shadow-brand/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand',
+          // ボトルラベル風: 外枠＋内側の二重罫（outline）で「ラベル」を示唆
+          'group mx-auto h-full cursor-pointer overflow-hidden border-border/60 bg-card/90 shadow-lg shadow-black/5 outline outline-1 -outline-offset-6 outline-brass/25 backdrop-blur transition hover:border-brand/60 hover:shadow-brand/10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand',
           className,
         )}
         {...props}
       >
         <CardHeader className="gap-2">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
             {item.featured ? (
-              <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+              <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
                 Featured
               </span>
             ) : null}
-            <span className="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground/80 dark:text-secondary-foreground">
+            <span className="text-xs font-semibold uppercase tracking-[0.28em] text-brass">
               {item.category}
             </span>
           </div>
           <div className="space-y-2">
-            <CardTitle className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+            <CardTitle className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
               {title}
             </CardTitle>
             <CardDescription>{summary}</CardDescription>
           </div>
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            {item.meta.timeline} / {item.meta.role}
+          {/* メニューと同じ点線リーダーのメタ行（年 ……… 役割） */}
+          <p className="flex items-baseline gap-3 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+            <span className="whitespace-nowrap">{item.meta.timeline}</span>
+            <span
+              className="min-w-[16px] flex-1 translate-y-[-3px] border-b border-dotted border-border/60"
+              aria-hidden="true"
+            />
+            <span className="whitespace-nowrap">{item.meta.role}</span>
           </p>
         </CardHeader>
         <CardContent className="flex flex-1 flex-col gap-4">
-          <figure className="overflow-hidden rounded-2xl border border-border/40 bg-muted/20">
+          <figure className="overflow-hidden rounded-lg border border-brass/30 bg-muted/20">
             <div className="aspect-[16/9] w-full bg-secondary/10">
               <img
                 src={item.image.src}
@@ -53,7 +60,7 @@ export const PortfolioCardTrigger = forwardRef<ElementRef<typeof Card>, Portfoli
                 loading="lazy"
               />
             </div>
-            <figcaption className="px-4 py-3 text-xs text-muted-foreground">
+            <figcaption className="border-t border-brass/20 px-4 py-3 text-xs italic text-muted-foreground">
               {imageAlt}
             </figcaption>
           </figure>

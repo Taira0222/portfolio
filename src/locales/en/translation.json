@@ -23,12 +23,16 @@
     }
   },
   "hero": {
-    "eyebrow": "Bar Taira — Est. 2019",
     "subtitle": "Full-Stack Software Engineer"
   },
   "about": {
-    "eyebrow": "About Me",
+    "eyebrow": "About the Owner",
     "title": "Self-Introduction",
+    "profile": [
+      { "label": "Base", "value": "United States (Remote)" },
+      { "label": "Background", "value": "Civil Eng × Edu × Software" },
+      { "label": "Main Work", "value": "Juku Cloud (EdTech SaaS)" }
+    ],
     "paragraphs": [
       "I'm Taira, a software engineer based in the U.S.",
       "I majored in civil engineering at university and worked for several years at the Tokyo Metropolitan Government before founding a private tutoring school. Through managing the school and teaching students, I came to strongly feel that technology has the power to solve real problems, which led me to start learning programming. To address the issue of teacher-dependent instruction that I experienced during my years of running the school, I'm developing an education management app called \"Juku Cloud\" as a personal project.",

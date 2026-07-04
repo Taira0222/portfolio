@@ -23,14 +23,6 @@ export const Hero = () => {
     >
       <HeroBackground />
       <div className="container relative z-10 mx-auto px-4 text-center">
-        <motion.p
-          className="mb-5 text-xs font-semibold uppercase tracking-[0.4em] text-brass sm:text-sm"
-          variants={subtitleVariants}
-          initial="initial"
-          animate="animate"
-        >
-          {t('hero.eyebrow', { defaultValue: 'Bar Taira — Est. 2019' })}
-        </motion.p>
         <HeroHeading />
         <motion.p
           className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl"

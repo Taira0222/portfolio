@@ -2,8 +2,14 @@ import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
+const defaultProfile = [
+  { label: '拠点', value: 'アメリカ（フルリモート）' },
+  { label: '経歴', value: '土木 × 教育 × ソフトウェア' },
+  { label: '代表作', value: 'Juku Cloud（教育SaaS）' },
+];
+
 const defaultContent = {
-  eyebrow: '私について',
+  eyebrow: 'About the Owner',
   title: '自己紹介',
   paragraphs: [
     'アメリカ在住のソフトウェアエンジニア、Tairaです。',
@@ -25,6 +31,10 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
     defaultValue: defaultContent.paragraphs,
     returnObjects: true,
   }) as string[];
+  const profile = t('about.profile', {
+    defaultValue: defaultProfile,
+    returnObjects: true,
+  }) as typeof defaultProfile;
 
   return (
     <motion.div variants={variants} className="flex flex-col gap-6 text-left">
@@ -42,6 +52,21 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
           <p key={`paragraph-${index}`}>{paragraph}</p>
         ))}
       </div>
+      {/* テイスティングノート風のプロフィール（点線リーダーはメニューと共通の意匠） */}
+      <ul className="mt-2 flex flex-col gap-2.5 border-t border-brass/30 pt-6">
+        {profile.map(({ label, value }) => (
+          <li key={label} className="flex items-baseline gap-3">
+            <span className="whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em] text-brass">
+              {label}
+            </span>
+            <span
+              className="min-w-[16px] flex-1 translate-y-[-3px] border-b border-dotted border-border/60"
+              aria-hidden="true"
+            />
+            <span className="whitespace-nowrap text-sm text-foreground">{value}</span>
+          </li>
+        ))}
+      </ul>
     </motion.div>
   );
 };

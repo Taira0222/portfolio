@@ -126,3 +126,21 @@ src/components/ui/Navigation/MobileHamburgerMenu.tsx … トグル設置（モ�
 - **アイコン方針＝モノクロ真鍮（案D）**：フルカラーのネイビー角丸ロゴは暖色メニューで浮くため廃止。単色（`fill=currentColor`→`text-brass`）のブランドロゴに統一。`glyphs.ts`（simple-icons / CC0 由来のパス）＋`BrandGlyph`。AWS は simple-icons 非配布のため lucide `Cloud` で代替。Devcontainer/MSW/RSpec/SimpleCov は従来どおり lucide。
 - **インタラクション**：スクロールで各カテゴリの項目が順にフェードイン（framer-motion `whileInView` + stagger、`once`）。「スクロールすると開く」を実現。
 - **撤去**：`TechStackCard.tsx`、`skillIcons` マップと `badgeClassName`/カテゴリ別 lucide アイコン。旧フルカラー SVG（`assets/skill-icons/*`）は未使用（import されないためバンドル対象外）。
+
+### 2026-07-04 About セクションの「オーナー紹介」化
+
+- **写真**：真鍮の二重リング（border＋outline offset）でコースター/ラベル風に。下に銘板風キャプション「TAIRA — Owner · Engineer」。
+- **プロフィール欄**：段落の下にテイスティングノート風のデータ行（点線リーダー、メニューと共通の意匠）を追加 — 拠点／ブレンド／熟成（Since 2019）／シグネチャー（Juku Cloud）。i18n 対応（`about.profile`）。
+- **アイブロウ**：`about.eyebrow` を日英とも「About the Owner」に統一（他セクションの英字アイブロウと整合、Hero の「Bar Taira — Est. 2019」と呼応）。
+
+### 2026-07-04 微調整
+
+- Hero のアイブロウ「Bar Taira — Est. 2019」を削除（ヒーローは名前と肩書きに集中させる）。`hero.eyebrow` キーも日英から削除。
+- About プロフィール欄のラベルを平易な言葉に変更（ブレンド→経歴、シグネチャー→代表作、熟成 Since 2019 は情報重複のため行ごと削除）。
+
+### 2026-07-04 Portfolio セクションのラベル化
+
+- **カード**：ボトルラベル風に（内側二重罫 outline、`font-display` セリフ見出し、カテゴリを真鍮スモールキャップスのテキストに、メタ行「年 ……… 役割」を点線リーダーに、スクリーンショットを真鍮枠＋イタリック注記で額装）。
+- **ダイアログ**：同意匠（二重罫・セリフ見出し・真鍮セクション見出し・◆ブレット・真鍮アウトラインの技術チップ）。
+- **カルーセル矢印**：真鍮ボーダー/アイコン色に統一。
+- 文言・情報は一切変更なし（比喩語を使わず意匠のみでバーらしさを表現する方針）。
