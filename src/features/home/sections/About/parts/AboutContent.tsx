@@ -6,10 +6,10 @@ const defaultContent = {
   eyebrow: '私について',
   title: '自己紹介',
   paragraphs: [
-    "アメリカ在住のソフトウェアエンジニア、Tairaです。",
-    "大学では土木工学を専攻し、東京都の技術職として数年勤務した後、個別指導塾を起業しました。",
-    "経営と指導の両面に携わる中で、テクノロジーで課題を解決できる可能性を強く感じ、プログラミングの学習を始めました。塾経営時代に感じた\"属人的な指導\"という課題を解決するため、個人プロジェクトとして教育管理アプリ「Juku Cloud」を開発しています。",
-    "現在は日本の会社（フルリモート）の業務委託のエンジニアとして、主に介護業界向けのアプリ開発に従事しています。"
+    'アメリカ在住のソフトウェアエンジニア、Tairaです。',
+    '大学では土木工学を専攻し、東京都の技術職として数年勤務した後、個別指導塾を起業しました。',
+    '経営と指導の両面に携わる中で、テクノロジーで課題を解決できる可能性を強く感じ、プログラミングの学習を始めました。塾経営時代に感じた"属人的な指導"という課題を解決するため、個人プロジェクトとして教育管理アプリ「Juku Cloud」を開発しています。',
+    '現在は日本の会社（フルリモート）の業務委託のエンジニアとして、主に介護業界向けのアプリ開発に従事しています。',
   ],
 };
 
@@ -29,12 +29,10 @@ export const AboutContent = ({ variants }: AboutContentProps) => {
   return (
     <motion.div variants={variants} className="flex flex-col gap-6 text-left">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-          {eyebrow}
-        </p>
+        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-brass">{eyebrow}</p>
         <h2
           id="about-heading"
-          className="mt-4 text-balance break-words text-3xl font-bold tracking-tight text-foreground md:text-4xl"
+          className="mt-4 text-balance break-words font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl"
         >
           {title}
         </h2>

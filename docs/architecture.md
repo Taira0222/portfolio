@@ -3,12 +3,20 @@
 ## テクノロジースタック
 
 ### フロントエンド
+
 - **ビルドツール**: Vite 7.x
 - **フレームワーク**: React 19.1
 - **言語**: TypeScript 5.8
 - **ルーティング**: React Router DOM 7.x
 - **スタイリング**: Tailwind CSS 4.x
 - **UIコンポーネント**: shadcn/ui
+- **デザインテーマ**: バー/ウイスキーテーマ（2026-07導入）
+  - ライト＝ボトルラベル（生成り紙×オックスブラッド×ゴールド）、ダーク＝スピークイージー（漆黒×琥珀×真鍮）
+  - カラーは `src/index.css` のセマンティックトークン（oklch）で一元管理（`--brass` を独自追加）
+  - テーマ切替: `useTheme` フック（デフォルトはライト固定。手動選択を localStorage に保存）＋ `index.html` の FOUC 防止スクリプト
+- **フォント**: @fontsource によるセルフホスト
+  - 見出し: Cormorant Garamond（英字）＋ しっぽり明朝（和文、unicode-range サブセット配信）
+  - 本文: システムサンセリフ
 - **アニメーション**: Framer Motion 12.x
 - **カルーセル**: Embla Carousel React 8.x
 - **状態管理**: React Hooks
@@ -22,6 +30,7 @@
   - class-variance-authority (バリアントスタイル管理)
 
 ### インフラストラクチャ
+
 - **ホスティング**: GitHub Pages
 - **ベースパス**: /portfolio/
 - **バージョン管理**: Git / GitHub
@@ -30,6 +39,7 @@
   - peaceiris/actions-gh-pages@v3使用
 
 ### 開発ツール
+
 - **パッケージマネージャー**: npm
 - **リンター**: ESLint 9.x
   - eslint-plugin-react-hooks
@@ -42,10 +52,12 @@
 ## 開発ツールと手法
 
 ### 開発環境
+
 - **Node.js**: v18.x以上推奨（GitHub Actions: v20）
 - **パッケージマネージャー**: npm
 
 ### 開発コマンド
+
 ```bash
 # 開発サーバー起動（ホスト公開）
 npm run dev
@@ -73,12 +85,14 @@ npm run ci
 ```
 
 ### コード品質
+
 - **静的解析**: ESLint 9.x + TypeScript ESLint
 - **コードフォーマット**: Prettier
 - **型安全性**: TypeScript strict mode
 - **React**: ESLint React Hooks Plugin
 
 ### 開発ワークフロー
+
 1. 機能ブランチでの開発
 2. npm run ci でリント・フォーマットチェック
 3. mainブランチへpush
@@ -88,16 +102,19 @@ npm run ci
 ## 技術的制約と要件
 
 ### ブラウザサポート
+
 - **モダンブラウザ**: Chrome, Firefox, Safari, Edge (最新2バージョン)
 - **モバイルブラウザ**: iOS Safari, Chrome Mobile
 - **非サポート**: IE11以下
 
 ### セキュリティ要件
+
 - **HTTPS**: GitHub Pagesによる自動HTTPS化
 - **XSS対策**: React標準のエスケープ処理
 - **環境変数**: Vite環境変数（VITE_BASE_URL: /portfolio/）
 
 ### アクセシビリティ
+
 - **WCAG 2.1**: レベルAA準拠を目標
 - **セマンティックHTML**: 適切なHTML要素の使用
 - **キーボード操作**: 全機能のキーボードアクセス
@@ -105,10 +122,12 @@ npm run ci
 - **ARIAラベル**: 必要に応じて適切に設定
 
 ### SEO要件
+
 - **メタタグ**: index.htmlに適切なtitle, description設定
 - **言語設定**: i18nextによる多言語対応（日本語・英語）
 
 ### レスポンシブ対応
+
 - **ブレークポイント**: Tailwind CSS デフォルト
   - sm: 640px
   - md: 768px
@@ -120,11 +139,13 @@ npm run ci
 ## パフォーマンス要件
 
 ### Core Web Vitals目標値
+
 - **LCP (Largest Contentful Paint)**: < 2.5秒
 - **FID (First Input Delay)**: < 100ms
 - **CLS (Cumulative Layout Shift)**: < 0.1
 
 ### 追加パフォーマンス指標
+
 - **FCP (First Contentful Paint)**: < 1.8秒
 - **TTI (Time to Interactive)**: < 3.8秒
 - **Speed Index**: < 3.4秒
@@ -132,39 +153,46 @@ npm run ci
 ### 最適化戦略
 
 #### 画像最適化
+
 - 最適なフォーマット（WebP、AVIF）の使用
 - 適切なサイズとリサイズ
 - 遅延読み込み（loading="lazy"）
 - 画像圧縮ツールの活用
 
 #### コード分割
+
 - React.lazyとSuspenseの活用
 - React Router DOM のルートベースコード分割
 - 動的インポート（dynamic import）の活用
 - コンポーネントレベルの遅延読み込み
 
 #### Vite最適化
+
 - **SWC**: 高速なTypeScript/JSXコンパイル
 - **Tree Shaking**: 未使用コードの自動削除
 - **Code Splitting**: チャンク分割による最適化
 - **Asset Inlining**: 小さいアセットのインライン化
 
 #### キャッシュ戦略
+
 - 静的アセットの長期キャッシュ
 - GitHub Pagesのキャッシュ活用
 - ハッシュ付きファイル名による効率的な更新
 
 #### バンドルサイズ
+
 - **初回JSバンドル**: < 200KB (gzip圧縮後) 目標
 - **CSSバンドル**: < 50KB (gzip圧縮後) 目標
 - Vite Build Analyzerでサイズ監視
 - 不要な依存関係の削除
 
 ### モニタリング
+
 - **Lighthouse**: 定期的なパフォーマンステスト
 - **Browser DevTools**: パフォーマンスプロファイリング
 
 ### パフォーマンステスト
+
 - 開発中のLighthouse定期実行
 - npm run buildでビルドサイズ確認
 - npm run previewで本番環境相当の動作確認

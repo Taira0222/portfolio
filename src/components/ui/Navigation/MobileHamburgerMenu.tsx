@@ -12,6 +12,7 @@ import {
 import { useSectionLinks, snsLinks } from './navigationLinks';
 import { LanguageToggle } from './LanguageToggle';
 import { useTranslation } from 'react-i18next';
+import { cn } from '@/lib/utils';
 
 export const MobileHamburgerMenu = () => {
   const sectionLinks = useSectionLinks();
@@ -53,7 +54,7 @@ export const MobileHamburgerMenu = () => {
               {t('navigation.sns', { defaultValue: 'SNS' })}
             </span>
             <ul className="flex flex-col gap-2">
-              {snsLinks.map(({ label, href, icon }) => (
+              {snsLinks.map(({ label, href, icon, invertsInDark }) => (
                 <li key={label}>
                   <SheetClose asChild>
                     <a
@@ -62,7 +63,15 @@ export const MobileHamburgerMenu = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-base font-medium text-foreground transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                     >
-                      <img src={icon} alt="" aria-hidden="true" className="h-5 w-5 opacity-80" />
+                      <img
+                        src={icon}
+                        alt=""
+                        aria-hidden="true"
+                        className={cn(
+                          'h-5 w-5 opacity-80',
+                          invertsInDark && 'dark:brightness-0 dark:invert',
+                        )}
+                      />
                       {label}
                     </a>
                   </SheetClose>

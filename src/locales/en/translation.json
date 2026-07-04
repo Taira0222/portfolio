@@ -16,9 +16,14 @@
       "toJapanese": "日本語",
       "switchToEnglish": "Switch to English",
       "switchToJapanese": "Switch to Japanese"
+    },
+    "theme": {
+      "toLight": "Switch to light mode",
+      "toDark": "Switch to dark mode"
     }
   },
   "hero": {
+    "eyebrow": "Bar Taira — Est. 2019",
     "subtitle": "Full-Stack Software Engineer"
   },
   "about": {

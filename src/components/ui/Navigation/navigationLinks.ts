@@ -18,6 +18,8 @@ export type SnsLink = {
   label: string;
   href: string;
   icon: string;
+  /** 黒いロゴ画像はダークモードで白反転して視認性を確保する */
+  invertsInDark?: boolean;
 };
 
 const buildFullPath = (slug: string) => {
@@ -81,8 +83,8 @@ export const useSectionLinks = (): SectionLink[] => {
 };
 
 export const snsLinks: SnsLink[] = [
-  { label: 'GitHub', href: externalLinks.social.github, icon: GitHubLogoPng },
-  { label: 'X', href: externalLinks.social.x, icon: XLogoPng },
+  { label: 'GitHub', href: externalLinks.social.github, icon: GitHubLogoPng, invertsInDark: true },
+  { label: 'X', href: externalLinks.social.x, icon: XLogoPng, invertsInDark: true },
   { label: 'Qiita', href: externalLinks.social.qiita, icon: QiitaLogoPng },
   {
     label: 'LinkedIn',

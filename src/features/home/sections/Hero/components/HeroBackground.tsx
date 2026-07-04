@@ -2,9 +2,10 @@ import { motion } from 'framer-motion';
 
 export const HeroBackground = () => (
   <>
-    <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-background via-secondary/10 to-primary/10" />
-    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.18),transparent_60%)]" />
-    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(14,165,233,0.15),transparent_65%)]" />
+    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/60" />
+    {/* バーのペンダントライトを模した上部中央の琥珀グロー */}
+    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_50%_-10%,color-mix(in_oklab,var(--primary)_20%,transparent),transparent_65%)]" />
+    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_30%,color-mix(in_oklab,var(--brass)_12%,transparent),transparent_60%)]" />
     <motion.div
       className="pointer-events-none absolute inset-0"
       initial={{ opacity: 0.2 }}

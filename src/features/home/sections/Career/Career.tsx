@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SectionDivider } from '@/components/Common/SectionDivider';
 import { useTranslation } from 'react-i18next';
 
 import { CareerCard } from './parts/CareerCard';
@@ -12,13 +13,14 @@ export const Career = () => {
   const { t } = useTranslation();
   const title = t('career.title', { defaultValue: '今までのキャリア' });
   const description = t('career.description', {
-    defaultValue: '土木の公務員、学習塾起業、自社でのプロダクト開発など多岐にわたって経験してきました。',
+    defaultValue:
+      '土木の公務員、学習塾起業、自社でのプロダクト開発など多岐にわたって経験してきました。',
   });
 
   return (
     <motion.section
       id="career"
-      className="relative overflow-hidden bg-gradient-to-b from-sky-100 via-blue-50 to-sky-50 py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-secondary via-background to-secondary/60 py-24"
       aria-labelledby="career-heading"
       ref={sectionRef}
       initial={initial}
@@ -35,18 +37,17 @@ export const Career = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.08 }}
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-            Career
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-brass">Career</p>
           <h2
             id="career-heading"
-            className="text-3xl font-bold tracking-tight text-foreground md:text-4xl"
+            className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl"
           >
             {title}
           </h2>
           <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
             {description}
           </p>
+          <SectionDivider className="w-28" />
         </motion.div>
 
         <motion.div

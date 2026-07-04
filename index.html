@@ -1,7 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // FOUC防止: CSS読込前にテーマを確定させる（useTheme と同じ解決順序）
+      // デフォルトはライト。dark を明示的に保存している場合のみダークで開始する
+      (function () {
+        try {
+          var dark = localStorage.getItem('theme') === 'dark';
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {
+          /* localStorage が使えない環境ではライトのまま表示 */
+        }
+      })();
+      // <html lang> を実際に表示する言語に合わせる（i18next の検出順と同じ:
+      // localStorage(i18nextLng) → navigator。対応は ja / en のみで既定は ja）。
+      // これによりブラウザの翻訳機能が「宣言=英語／中身=日本語」と誤判定するのを防ぐ。
+      (function () {
+        try {
+          var lng = localStorage.getItem('i18nextLng') || navigator.language || 'ja';
+          document.documentElement.lang = lng.toLowerCase().split('-')[0] === 'en' ? 'en' : 'ja';
+        } catch (e) {
+          document.documentElement.lang = 'ja';
+        }
+      })();
+    </script>
     <meta property="og:title" content="TAIRA PORTFOLIO | TAIRA のポートフォリオサイトです" />
     <meta
       property="og:description"

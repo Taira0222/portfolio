@@ -12,11 +12,13 @@ type SocialLink = {
   href: string;
   label: string;
   icon: string;
+  /** 黒いロゴ画像はダークモードで白反転して視認性を確保する */
+  invertsInDark?: boolean;
 };
 
 const socialLinks: SocialLink[] = [
-  { href: externalLinks.social.github, label: 'GitHub', icon: GitHubLogoPng },
-  { href: externalLinks.social.x, label: 'X', icon: XLogoPng },
+  { href: externalLinks.social.github, label: 'GitHub', icon: GitHubLogoPng, invertsInDark: true },
+  { href: externalLinks.social.x, label: 'X', icon: XLogoPng, invertsInDark: true },
   { href: externalLinks.social.qiita, label: 'Qiita', icon: QiitaLogoPng },
   {
     href: externalLinks.social.linkedin,
@@ -37,7 +39,7 @@ export const Footer = () => {
       <footer className="border-t border-border/40 bg-gradient-to-b from-background via-background/95 to-background">
         <div className="container mx-auto flex flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between md:px-10">
           <div className="space-y-2 text-center md:text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/70">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brass">
               Stay Connected
             </p>
             <p className="text-sm text-muted-foreground md:text-base">
@@ -49,7 +51,7 @@ export const Footer = () => {
             aria-label="Social media"
             className="flex flex-wrap items-center justify-center gap-3"
           >
-            {socialLinks.map(({ href, label, icon }, index) => (
+            {socialLinks.map(({ href, label, icon, invertsInDark }, index) => (
               <a
                 key={label}
                 href={href}
@@ -60,7 +62,10 @@ export const Footer = () => {
                 <img
                   src={icon}
                   alt={`${label} logo`}
-                  className="h-5 w-5 opacity-80 transition group-hover:opacity-100"
+                  className={cn(
+                    'h-5 w-5 opacity-80 transition group-hover:opacity-100',
+                    invertsInDark && 'dark:brightness-0 dark:invert',
+                  )}
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
                 <span className="sr-only">{label}</span>

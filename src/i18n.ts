@@ -26,4 +26,15 @@ i18n
     },
   });
 
+// <html lang> を実際に表示中の言語に同期させる。
+// 宣言(lang)と中身の言語がズレると、ブラウザの翻訳機能が誤判定するため。
+const applyDocumentLanguage = (language: string | undefined) => {
+  if (typeof document === 'undefined') return;
+  const normalized = (language ?? '').split('-')[0].toLowerCase();
+  document.documentElement.lang = normalized === 'en' ? 'en' : 'ja';
+};
+
+applyDocumentLanguage(i18n.resolvedLanguage ?? i18n.language);
+i18n.on('languageChanged', applyDocumentLanguage);
+
 export default i18n;

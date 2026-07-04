@@ -11,6 +11,7 @@ import { navigationMenuTriggerStyle } from './navigationMenuTriggerStyle';
 import { useSectionLinks, snsLinks } from './navigationLinks';
 import { LanguageToggle } from './LanguageToggle';
 import { useTranslation } from 'react-i18next';
+import { cn } from '@/lib/utils';
 
 const snsLinkClass =
   'flex flex-row items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-left transition hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
@@ -35,7 +36,7 @@ export const NavigationMenuHeader = () => {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="md:left-auto md:right-0">
             <ul className="grid min-w-[220px] gap-2 p-2 text-left">
-              {snsLinks.map(({ label, href, icon }) => (
+              {snsLinks.map(({ label, href, icon, invertsInDark }) => (
                 <li key={label} className="list-none">
                   <NavigationMenuLink asChild>
                     <a
@@ -44,7 +45,15 @@ export const NavigationMenuHeader = () => {
                       rel="noopener noreferrer"
                       className={snsLinkClass}
                     >
-                      <img src={icon} alt="" aria-hidden="true" className="h-4 w-4 opacity-80" />
+                      <img
+                        src={icon}
+                        alt=""
+                        aria-hidden="true"
+                        className={cn(
+                          'h-4 w-4 opacity-80',
+                          invertsInDark && 'dark:brightness-0 dark:invert',
+                        )}
+                      />
                       {label}
                     </a>
                   </NavigationMenuLink>

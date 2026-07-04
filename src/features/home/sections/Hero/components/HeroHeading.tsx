@@ -4,7 +4,7 @@ import { headingVariants } from '../variants';
 
 export const HeroHeading = () => (
   <motion.h1
-    className="text-balance break-words mb-6 text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl"
+    className="text-balance break-words mb-6 font-display text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl"
     variants={headingVariants}
     initial="initial"
     animate="animate"
