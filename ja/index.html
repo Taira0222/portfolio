@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // FOUC防止: CSS読込前にテーマを確定させる（useTheme と同じ解決順序）
+      // デフォルトはライト。dark を明示的に保存している場合のみダークで開始する
+      (function () {
+        try {
+          var dark = localStorage.getItem('theme') === 'dark';
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {
+          /* localStorage が使えない環境ではライトのまま表示 */
+        }
+      })();
+      // <html lang> を URL の言語に合わせる（英語は /、日本語は /ja。src/lib/language.ts と同じ決め方）。
+      // 宣言と中身の言語がズレると、ブラウザの翻訳機能が誤判定するため。
+      (function () {
+        var path = location.pathname.slice('/portfolio/'.replace(/\/+$/, '').length);
+        document.documentElement.lang = /^\/ja(\/|$)/.test(path) ? 'ja' : 'en';
+      })();
+    </script>
+    <!-- 英語のページの題名と説明。日本語のページ（/ja/）の分は scripts/postbuild.mjs が書き換える -->
+    <meta
+      name="description"
+      content="米国在住のフルスタックエンジニア Taira Aikawa のポートフォリオ。作ったものと技術スタック。"
+    />
+    <meta property="og:title" content="Taira Aikawa | フルスタックエンジニア" />
+    <meta
+      property="og:description"
+      content="米国在住のフルスタックエンジニア Taira Aikawa のポートフォリオ。作ったものと技術スタック。"
+    />
+    <meta property="og:image" content="https://taira0222.github.io/portfolio/ogp.jpg" />
+    <meta property="og:url" content="https://taira0222.github.io/portfolio/ja/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TAIRA PORTFOLIO" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Taira Aikawa | フルスタックエンジニア" />
+    <meta
+      name="twitter:description"
+      content="米国在住のフルスタックエンジニア Taira Aikawa のポートフォリオ。作ったものと技術スタック。"
+    />
+    <meta name="twitter:image" content="https://taira0222.github.io/portfolio/ogp.jpg" />
+    <meta name="twitter:site" content="@Taira_En0222" />
+    <link rel="alternate" hreflang="en" href="https://taira0222.github.io/portfolio/" />
+    <link rel="alternate" hreflang="ja" href="https://taira0222.github.io/portfolio/ja/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/portfolio/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/portfolio/icon.svg" />
+    <link rel="apple-touch-icon" href="/portfolio/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taira Aikawa | フルスタックエンジニア</title>
+    <script type="module" crossorigin src="/portfolio/assets/index-CMWuiwbn.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-jgRNaAZi.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
