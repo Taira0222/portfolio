@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "ci": "eslint src && prettier --check .",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/postbuild.mjs",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "preview": "vite preview",
@@ -28,7 +28,6 @@
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.24",
     "i18next": "^25.3.2",
-    "i18next-browser-languagedetector": "^8.2.0",
     "lucide-react": "^0.526.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

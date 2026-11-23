@@ -5,8 +5,7 @@
 | 用語 | 定義 | 関連型 |
 |------|------|--------|
 | **Portfolio** | プロジェクト実績、スキル、経験を視覚的に紹介する成果物集 | `PortfolioItem`, `PortfolioCategory` |
-| **Career Milestone** | キャリアにおける重要な節目や出来事を時系列で記録したもの | `CareerMilestone` |
-| **Tech Stack** | 使用する技術・ツール・フレームワークの集合（Frontend, Backend, Database, CI/CD, Infrastructure, Testing） | `TechStackItem`, `TechStackCategory` |
+| **Tech Stack** | 使用する技術・ツール・フレームワークの集合（Back End, Front End, Cloud & Infra, Database, CI/CD, AI） | `TechStackItem`, `TechStackCategory` |
 | **CTA (Call To Action)** | ユーザーに行動を促すボタン・リンク（`live`, `repo`, `article`） | `PortfolioCta` |
 
 ---
@@ -25,7 +24,7 @@
 
 | 用語 | 定義 |
 |------|------|
-| **Section** | ページ内の論理的に分割された領域（Hero, About, Tech Stack, Portfolio, Career） |
+| **Section** | ページ内の論理的に分割された領域（Hero, About, Tech Stack, Portfolio） |
 | **Carousel** | 複数のコンテンツを横スクロールで切り替えるUIパターン（Embla Carousel使用） |
 | **Dialog** | オーバーレイ表示される一時的なウィンドウ（shadcn/ui使用） |
 | **Hamburger Menu** | モバイル用の折りたたみ式ナビゲーション（768px未満で表示） |
@@ -40,9 +39,7 @@
 | 英語 | 日本語 |
 |------|--------|
 | Portfolio | ポートフォリオ |
-| Career | キャリア |
 | Tech Stack | 技術スタック |
-| Milestone | マイルストーン |
 | CTA (Call To Action) | 行動喚起 |
 | Hero Section | ヒーローセクション |
 | About Section | 自己紹介セクション |

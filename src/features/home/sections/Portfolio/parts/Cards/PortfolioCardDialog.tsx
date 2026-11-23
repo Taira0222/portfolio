@@ -1,4 +1,5 @@
-import { Globe, Github, Newspaper } from 'lucide-react';
+import { ArrowDown, ArrowRight, Globe, Github, Newspaper } from 'lucide-react';
+import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/ui/Button/button';
@@ -32,9 +33,10 @@ const CTA_VARIANT: Record<PortfolioCtaType, 'default' | 'outline' | 'secondary'>
 
 export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
   const { t } = useTranslation();
-  const { title, summary, highlights, ctaLabels } = useLocalizedPortfolioItem(item);
+  const { title, summary, highlights, ctaLabels, flowNote } = useLocalizedPortfolioItem(item);
   const technologiesLabel = t('portfolio.labels.technologies', { defaultValue: '使用技術' });
   const highlightsLabel = t('portfolio.labels.highlights', { defaultValue: 'ハイライト' });
+  const howItWorksLabel = t('portfolio.labels.howItWorks', { defaultValue: '仕組み' });
 
   return (
     <DialogContent className="max-w-2xl space-y-6 outline outline-1 -outline-offset-8 outline-brass/25">
@@ -74,6 +76,31 @@ export const PortfolioCardDialog = ({ item }: PortfolioCardDialogProps) => {
               </span>
             ))}
           </div>
+        </section>
+        {/* 仕組み：技術の箱を真鍮の矢印でつなぐ（スマホは縦、広い画面は横） */}
+        <section className="space-y-3">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-brass">
+            {howItWorksLabel}
+          </h3>
+          <div className="flex flex-col items-start gap-1.5 sm:flex-row sm:items-center sm:gap-2">
+            {item.flow.map((step, index) => (
+              <Fragment key={step.name}>
+                {index > 0 ? (
+                  <span className="pl-5 text-brass sm:pl-0" aria-hidden="true">
+                    <ArrowDown className="size-4 sm:hidden" />
+                    <ArrowRight className="hidden size-4 sm:block" />
+                  </span>
+                ) : null}
+                <div className="flex min-w-[9rem] flex-col rounded-md border border-brass/50 bg-background/60 px-3 py-2 shadow-sm">
+                  <span className="text-sm font-medium text-foreground">{step.name}</span>
+                  <span className="text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                    {step.note}
+                  </span>
+                </div>
+              </Fragment>
+            ))}
+          </div>
+          {flowNote ? <p className="text-xs text-muted-foreground">+ {flowNote}</p> : null}
         </section>
         <section className="space-y-2">
           <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-brass">

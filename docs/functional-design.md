@@ -54,8 +54,7 @@ src/
 │   ├── Hero/                  # ヒーロー
 │   ├── About/                 # 自己紹介
 │   ├── TechStack/             # 技術スタック
-│   ├── Portfolio/             # ポートフォリオ
-│   └── Career/                # キャリア
+│   └── Portfolio/             # ポートフォリオ
 ├── components/
 │   ├── Common/                # Header、Footer
 │   └── ui/                    # 再利用可能なUI
@@ -67,7 +66,7 @@ src/
 ### 主要機能
 
 1. **ナビゲーション**: スクロール連動ヘッダー、スムーズスクロール
-2. **国際化**: 日本語/英語切り替え、localStorage保存
+2. **国際化**: 英語は `/portfolio/`、日本語は `/portfolio/ja/`。切り替えのボタンはもう一方の URL へ移る
 3. **ポートフォリオ**: カルーセル表示、モーダル詳細
 4. **アニメーション**: スクロール連動、Intersection Observer
 5. **レスポンシブ**: モバイルファースト、768px/1024pxブレークポイント
@@ -87,14 +86,14 @@ src/
 │  │   ├─ i18next (国際化)              │  │
 │  │   └─ Framer Motion (アニメ)        │  │
 │  └────────────────────────────────────┘  │
-│  localStorage │ Browser Language          │
+│  URL（/ja かどうか）で言語を決める         │
 └──────────────────────────────────────────┘
                  ↓
 ┌──────────────────────────────────────────┐
 │   Static File Server (GitHub Pages)      │
-│   - index.html                            │
-│   - /assets/ (JS, CSS)                    │
-│   - /locales/ (翻訳JSON)                  │
+│   - index.html（英語）・ja/index.html     │
+│   - 404.html（深い道の受け皿）            │
+│   - /assets/ (JS, CSS, 画像, フォント)    │
 └──────────────────────────────────────────┘
 ```
 
@@ -109,10 +108,9 @@ React Router → Home Component
 ├─ Hero → Framer Motion → Animation
 ├─ About → i18next → Translation
 ├─ TechStack → Static Data → Render
-├─ Portfolio → useLocalizedPortfolioItem → Dialog
-└─ Career → Static Data → Timeline
+└─ Portfolio → useLocalizedPortfolioItem → Dialog（仕組みの構成図）
 
-localStorage ← i18next → LanguageToggle
+URL（/ja） → LanguageSync → i18next ← LanguageToggle（もう一方の URL へ移る）
 ```
 
 ---
@@ -133,8 +131,6 @@ App → Router → Home
                 │   └─ PortfolioCarousel
                 │       └─ PortfolioCard
                 │           └─ PortfolioCardDialog
-                ├─ Career
-                │   └─ CareerCard
                 └─ Footer
 ```
 
@@ -144,7 +140,7 @@ App → Router → Home
 | ------------------ | ----------------------------- | -------------------- | ----------------------------- |
 | **Header**         | ナビゲーション                | `showHeader`         | スクロール監視                |
 | **PortfolioCard**  | カード表示                    | `isOpen`             | ダイアログ制御                |
-| **LanguageToggle** | 言語切替                      | -                    | i18n変更                      |
+| **LanguageToggle** | 言語切替                      | -                    | もう一方の言語の URL へ移動   |
 | **ThemeToggle**    | テーマ切替                    | -（`useTheme` 経由） | `<html>` の `dark` クラス操作 |
 | **SectionDivider** | バーメニュー風の飾り罫線（◆） | -                    | なし                          |
 
@@ -152,7 +148,7 @@ App → Router → Home
 
 | 状態                 | 管理方法        | スコープ                      | 永続化                         |
 | -------------------- | --------------- | ----------------------------- | ------------------------------ |
-| 言語設定             | i18next Context | グローバル                    | localStorage                   |
+| 言語設定             | URL（/ja）      | グローバル                    | URL                            |
 | テーマ（light/dark） | useTheme フック | グローバル（documentElement） | localStorage（手動選択時のみ） |
 | ヘッダー表示         | useState        | ローカル                      | なし                           |
 | ダイアログ           | useState        | ローカル                      | なし                           |
@@ -190,14 +186,12 @@ App → Router → Home
 ├─ UC1: サイトを閲覧
 │   - ページ読み込み、セクション間移動
 ├─ UC2: 言語切り替え
-│   - 日本語 ⇔ 英語、localStorage保存
+│   - 英語（/portfolio/）⇔ 日本語（/portfolio/ja/）
 ├─ UC3: ポートフォリオ閲覧
 │   - カルーセル操作、詳細モーダル表示
 ├─ UC4: 技術スタック確認
 │   - カテゴリ別表示
-├─ UC5: キャリア確認
-│   - タイムライン表示
-└─ UC6: SNSリンクアクセス
+└─ UC5: SNSリンクアクセス
     - 外部サイトへ遷移
 ```
 
@@ -208,8 +202,7 @@ App → Router → Home
          ├─ /about-me
          ├─ /tech-stack
          ├─ /projects
-         ├─ /career
-         └─ /top
+         └─ /ja/…（同じ道の日本語）
 
 各ルート → 同じHomeコンポーネント
          → スムーズスクロールで対象セクションへ

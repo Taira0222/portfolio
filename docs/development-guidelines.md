@@ -47,7 +47,7 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 
 // 3. 型定義
-import type { CareerMilestone } from '../types';
+import type { PortfolioItem } from '../constants/data';
 
 // 4. フック・ユーティリティ
 import { useRevealAnimation } from '@/hooks/useRevealAnimation';
@@ -59,7 +59,7 @@ import { useRevealAnimation } from '@/hooks/useRevealAnimation';
 
 | 対象 | 形式 | 例 |
 |------|------|-----|
-| コンポーネントファイル | PascalCase | `Button.tsx`, `CareerCard.tsx` |
+| コンポーネントファイル | PascalCase | `Button.tsx`, `PortfolioCard.tsx` |
 | ユーティリティ・フック | camelCase | `utils.ts`, `useMobile.ts` |
 | 変数・関数 | camelCase | `userName`, `fetchData()` |
 | グローバル定数 | UPPER_SNAKE_CASE | `MAX_RETRY_COUNT` |

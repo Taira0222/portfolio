@@ -1,11 +1,13 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import type { TFunction } from 'i18next';
 import GitHubLogoPng from '@/assets/footer/githubLogo.png';
 import XLogoPng from '@/assets/footer/xLogo.png';
 import QiitaLogoPng from '@/assets/footer/qiitaLogo.png';
 import LinkedinLogoPng from '@/assets/footer/linkedInLogo.png';
 import { externalLinks } from '@/constants/externalLinks';
+import { type Language, languageFromPath, withLanguage } from '@/lib/language';
 
 export type SectionLink = {
   label: string;
@@ -23,7 +25,7 @@ export type SnsLink = {
 };
 
 const buildFullPath = (slug: string) => {
-  const baseUrl = import.meta.env.VITE_BASE_URL;
+  const baseUrl = import.meta.env.BASE_URL;
   if (!slug || slug === '/') {
     return baseUrl;
   }
@@ -59,27 +61,28 @@ const sectionDefinitions: SectionDefinition[] = [
     slug: '/projects',
     sectionId: 'portfolio',
   },
-  {
-    labelKey: 'navigation.sections.career',
-    defaultLabel: '今までのキャリア',
-    slug: '/career',
-    sectionId: 'career',
-  },
 ];
 
-const buildSectionLinks = (t: TFunction): SectionLink[] =>
-  sectionDefinitions.map(({ labelKey, defaultLabel, slug, sectionId }) => ({
-    label: t(labelKey, { defaultValue: defaultLabel }),
-    to: slug,
-    fullPath: buildFullPath(slug),
-    sectionId,
-  }));
+// 道は言語の頭付き（日本語は /ja/about-me など。英語は頭なし）
+const buildSectionLinks = (t: TFunction, language: Language): SectionLink[] =>
+  sectionDefinitions.map(({ labelKey, defaultLabel, slug, sectionId }) => {
+    const to = withLanguage(slug, language);
+    return {
+      label: t(labelKey, { defaultValue: defaultLabel }),
+      to,
+      fullPath: buildFullPath(to),
+      sectionId,
+    };
+  });
 
-export const getSectionLinks = (t: TFunction): SectionLink[] => buildSectionLinks(t);
+export const getSectionLinks = (t: TFunction, language: Language): SectionLink[] =>
+  buildSectionLinks(t, language);
 
 export const useSectionLinks = (): SectionLink[] => {
   const { t } = useTranslation();
-  return useMemo(() => buildSectionLinks(t), [t]);
+  const { pathname } = useLocation();
+  const language = languageFromPath(pathname);
+  return useMemo(() => buildSectionLinks(t, language), [t, language]);
 };
 
 export const snsLinks: SnsLink[] = [

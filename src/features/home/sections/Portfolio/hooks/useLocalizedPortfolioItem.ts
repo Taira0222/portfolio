@@ -8,6 +8,7 @@ type LocalizedPortfolioItem = {
   imageAlt: string;
   highlights: string[];
   ctaLabels: string[];
+  flowNote?: string;
 };
 
 export const useLocalizedPortfolioItem = (item: PortfolioItem): LocalizedPortfolioItem => {
@@ -31,12 +32,17 @@ export const useLocalizedPortfolioItem = (item: PortfolioItem): LocalizedPortfol
       }),
     );
 
+    const flowNote = item.flowNote
+      ? t(`${baseKey}.flowNote`, { defaultValue: item.flowNote })
+      : undefined;
+
     return {
       title,
       summary,
       imageAlt,
       highlights,
       ctaLabels,
+      flowNote,
     };
   }, [item, t]);
 };

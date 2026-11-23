@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <script>
@@ -13,41 +13,44 @@
           /* localStorage が使えない環境ではライトのまま表示 */
         }
       })();
-      // <html lang> を実際に表示する言語に合わせる（i18next の検出順と同じ:
-      // localStorage(i18nextLng) → navigator。対応は ja / en のみで既定は ja）。
-      // これによりブラウザの翻訳機能が「宣言=英語／中身=日本語」と誤判定するのを防ぐ。
+      // <html lang> を URL の言語に合わせる（英語は /、日本語は /ja。src/lib/language.ts と同じ決め方）。
+      // 宣言と中身の言語がズレると、ブラウザの翻訳機能が誤判定するため。
       (function () {
-        try {
-          var lng = localStorage.getItem('i18nextLng') || navigator.language || 'ja';
-          document.documentElement.lang = lng.toLowerCase().split('-')[0] === 'en' ? 'en' : 'ja';
-        } catch (e) {
-          document.documentElement.lang = 'ja';
-        }
+        var path = location.pathname.slice('%BASE_URL%'.replace(/\/+$/, '').length);
+        document.documentElement.lang = /^\/ja(\/|$)/.test(path) ? 'ja' : 'en';
       })();
     </script>
-    <meta property="og:title" content="TAIRA PORTFOLIO | TAIRA のポートフォリオサイトです" />
+    <!-- 英語のページの題名と説明。日本語のページ（/ja/）の分は scripts/postbuild.mjs が書き換える -->
+    <meta
+      name="description"
+      content="Taira Aikawa is a full-stack software engineer based in the U.S. Selected work and tech stack."
+    />
+    <meta property="og:title" content="Taira Aikawa | Full-stack software engineer" />
     <meta
       property="og:description"
-      content="TAIRA のポートフォリオサイトでは自己紹介、スキルセット、プロジェクト実績、キャリアの軌跡などを紹介しています。"
+      content="Taira Aikawa is a full-stack software engineer based in the U.S. Selected work and tech stack."
     />
-    <meta property="og:image" content="https://taira0222.github.io/portfolio/ogp.png" />
+    <meta property="og:image" content="https://taira0222.github.io/portfolio/ogp.jpg" />
     <meta property="og:url" content="https://taira0222.github.io/portfolio/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="TAIRA PORTFOLIO" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="TAIRA PORTFOLIO | TAIRA のポートフォリオサイトです" />
+    <meta name="twitter:title" content="Taira Aikawa | Full-stack software engineer" />
     <meta
       name="twitter:description"
-      content="TAIRA のポートフォリオサイトでは自己紹介、スキルセット、プロジェクト実績、キャリアの軌跡などを紹介しています。"
+      content="Taira Aikawa is a full-stack software engineer based in the U.S. Selected work and tech stack."
     />
-    <meta name="twitter:image" content="https://taira0222.github.io/portfolio/ogp.png" />
+    <meta name="twitter:image" content="https://taira0222.github.io/portfolio/ogp.jpg" />
     <meta name="twitter:site" content="@Taira_En0222" />
+    <link rel="alternate" hreflang="en" href="https://taira0222.github.io/portfolio/" />
+    <link rel="alternate" hreflang="ja" href="https://taira0222.github.io/portfolio/ja/" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" sizes="any" href="/icon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAIRA PORTFOLIO</title>
+    <title>Taira Aikawa | Full-stack software engineer</title>
   </head>
   <body>
     <div id="root"></div>

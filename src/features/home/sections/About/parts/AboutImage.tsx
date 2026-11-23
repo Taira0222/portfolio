@@ -1,4 +1,4 @@
-import AboutMe from '@/assets/About_me.png';
+import AboutMe from '@/assets/about-me.jpg';
 import { useIsMobile } from '@/hooks/useMobile';
 import { cn } from '@/lib/utils';
 

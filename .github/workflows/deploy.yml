@@ -10,8 +10,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      VITE_BASE_URL: /portfolio/
     steps:
       # 外部の部品は commit の ID で固定する（タグは差し替えられるため）。上げるときは出てから 3 日たった版に
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -22,11 +20,6 @@ jobs:
         with:
           node-version-file: .nvmrc
           package-manager-cache: false # 書き込みの権限がある処理なのでキャッシュを使わない
-
-      # Viteの環境変数をセット
-      - name: Export Vite envs to GitHub Actions
-        run: |
-          echo "VITE_BASE_URL=${{ env.VITE_BASE_URL }}" >> $GITHUB_ENV
 
       - run: npm ci
       - run: npm run build

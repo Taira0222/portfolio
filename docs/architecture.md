@@ -15,14 +15,15 @@
   - カラーは `src/index.css` のセマンティックトークン（oklch）で一元管理（`--brass` を独自追加）
   - テーマ切替: `useTheme` フック（デフォルトはライト固定。手動選択を localStorage に保存）＋ `index.html` の FOUC 防止スクリプト
 - **フォント**: @fontsource によるセルフホスト
-  - 見出し: Cormorant Garamond（英字）＋ しっぽり明朝（和文、unicode-range サブセット配信）
+  - 見出し: Cormorant Garamond（英字）＋ しっぽり明朝（和文、unicode-range サブセット配信。日本語のページ（/ja）のときだけ読む）
   - 本文: システムサンセリフ
 - **アニメーション**: Framer Motion 12.x
 - **カルーセル**: Embla Carousel React 8.x
 - **状態管理**: React Hooks
 - **国際化**: i18next + react-i18next
-  - i18next-browser-languagedetector
+  - 言語は URL だけで決める（英語は `/portfolio/`、日本語は `/portfolio/ja/`。`src/lib/language.ts`）。ブラウザの言語では切り替えない
   - 翻訳リソースはバンドルに同梱（src/locales/{ja,en}/translation.json）
+  - ビルドの後に `scripts/postbuild.mjs` が `dist/ja/index.html`（日本語の題名・説明・og）と `dist/404.html`（深い道を直接開いたときの受け皿）を作る
 - **アイコン**: Lucide React
 - **ユーティリティ**:
   - clsx (条件付きクラス名)
@@ -111,7 +112,7 @@ npm run ci
 
 - **HTTPS**: GitHub Pagesによる自動HTTPS化
 - **XSS対策**: React標準のエスケープ処理
-- **環境変数**: Vite環境変数（VITE_BASE_URL: /portfolio/）
+- **公開先の道**: `vite.config.ts` の `base`（/portfolio/）。コードからは `import.meta.env.BASE_URL`
 
 ### アクセシビリティ
 

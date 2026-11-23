@@ -1,28 +1,41 @@
-import { useMemo } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Home } from '@/features/home';
 import { getSectionLinks } from '@/components/ui/Navigation/navigationLinks';
-import { useTranslation } from 'react-i18next';
+import { LANGUAGES, languageFromPath, withLanguage } from '@/lib/language';
+
+/** パス（/ja かどうか）に合わせて表示の言語を切り替える */
+const LanguageSync = () => {
+  const { pathname } = useLocation();
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    const language = languageFromPath(pathname);
+    if (i18n.resolvedLanguage !== language) void i18n.changeLanguage(language);
+  }, [pathname, i18n]);
+  return null;
+};
 
 export const Router = () => {
   const { t } = useTranslation();
-  const sectionLinks = useMemo(() => getSectionLinks(t), [t]);
-  const homeLink =
-    sectionLinks.find((link) => link.sectionId === 'top') ?? sectionLinks[0];
-  const homePath = homeLink?.to || '/';
-  const additionalLinks = sectionLinks.filter((link) => link !== homeLink);
-  const shouldRedirectRoot = homePath !== '/';
+  // 欄ごとの道（/about-me など）を、英語（頭なし）と日本語（/ja）の両方に作る
+  const routes = useMemo(
+    () =>
+      LANGUAGES.flatMap((language) =>
+        getSectionLinks(t, language).map(({ to, sectionId }) => ({ to, sectionId, language })),
+      ),
+    [t],
+  );
   return (
-    <Routes>
-      {shouldRedirectRoot && <Route path="/" element={<Navigate to={homePath} replace />} />}
-      <Route path={homePath} element={<Home initialSection="top" />} />
-      {shouldRedirectRoot && (
-        <Route path={`${homePath}/`} element={<Navigate to={homePath} replace />} />
-      )}
-      {additionalLinks.map(({ to, sectionId }) => (
-        <Route key={to} path={to} element={<Home initialSection={sectionId} />} />
-      ))}
-      <Route path="*" element={<Navigate to={homePath} replace />} />
-    </Routes>
+    <>
+      <LanguageSync />
+      <Routes>
+        {routes.map(({ to, sectionId }) => (
+          <Route key={to} path={to} element={<Home initialSection={sectionId} />} />
+        ))}
+        <Route path="/ja/*" element={<Navigate to={withLanguage('/', 'ja')} replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
   );
 };

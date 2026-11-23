@@ -15,9 +15,7 @@ export type GlyphSlug =
   | 'githubActions'
   | 'gitlab'
   | 'docker'
-  | 'terraform'
-  | 'vitest'
-  | 'testingLibrary';
+  | 'terraform';
 
 export type TechStackItem = {
   name: string;

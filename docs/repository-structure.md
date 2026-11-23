@@ -7,14 +7,13 @@ portfolio/
 ├── .github/              # GitHub Actions、Issue/PRテンプレート
 ├── docs/                 # プロジェクトドキュメント
 ├── public/               # 静的ファイル（ビルド時コピー）
-│   └── locales/         # i18n翻訳ファイル（ja/en）
 ├── src/
-│   ├── assets/          # 画像・アイコン（セクション別: career, portfolio, etc.）
+│   ├── assets/          # 画像・アイコン（セクション別: portfolio, footer など）
 │   ├── components/      # 共通コンポーネント
 │   │   ├── ui/         # UIコンポーネント（Button, Navigation等）
 │   │   └── Common/     # 汎用コンポーネント
 │   ├── features/        # 機能別コンポーネント
-│   │   └── home/sections/  # Hero, About, Career, TechStack, Portfolio
+│   │   └── home/sections/  # Hero, About, TechStack, Portfolio
 │   ├── hooks/           # カスタムReactフック
 │   ├── lib/             # ユーティリティ関数
 │   ├── Router/          # ルーティング設定
@@ -47,9 +46,9 @@ features/home/sections/
 ├── Hero/
 │   ├── index.tsx
 │   └── components/      # セクション固有のサブコンポーネント
-├── Career/
-│   ├── index.tsx
-│   ├── constants/       # セクション固有の定数
+├── TechStack/
+│   ├── index.ts
+│   ├── data.ts          # セクション固有の定数
 │   └── parts/          # セクション内の部品コンポーネント
 └── Portfolio/
     ├── index.tsx

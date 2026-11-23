@@ -1,6 +1,8 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { languageFromPath, withLanguage } from '@/lib/language';
 import { navigationMenuTriggerStyle } from './navigationMenuTriggerStyle';
 
 type LanguageToggleProps = {
@@ -8,21 +10,16 @@ type LanguageToggleProps = {
   variant?: 'navigation' | 'default';
 };
 
-const normalizeLanguageCode = (language: string | undefined) => {
-  if (!language) return '';
-  return language.split('-')[0]?.toLowerCase() ?? '';
-};
-
+// 言語は URL で分けている（英語は /、日本語は /ja）。押すと、今の欄のままもう一方の URL へ移る
 export const LanguageToggle = ({ className, variant = 'default' }: LanguageToggleProps) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+  const { pathname, hash } = useLocation();
+  const navigate = useNavigate();
 
-  const { nextLanguage, buttonLabel, ariaLabel } = useMemo(() => {
-    const resolved = normalizeLanguageCode(i18n.resolvedLanguage ?? i18n.language);
-    const isJapanese = resolved === 'ja';
-    const next = isJapanese ? 'en' : 'ja';
-
+  const { nextPath, buttonLabel, ariaLabel } = useMemo(() => {
+    const isJapanese = languageFromPath(pathname) === 'ja';
     return {
-      nextLanguage: next,
+      nextPath: withLanguage(pathname, isJapanese ? 'en' : 'ja'),
       buttonLabel: isJapanese
         ? t('navigation.toggle.toEnglish', { defaultValue: 'English' })
         : t('navigation.toggle.toJapanese', { defaultValue: '日本語' }),
@@ -30,15 +27,11 @@ export const LanguageToggle = ({ className, variant = 'default' }: LanguageToggl
         ? t('navigation.toggle.switchToEnglish', { defaultValue: 'Switch to English' })
         : t('navigation.toggle.switchToJapanese', { defaultValue: '日本語に切り替える' }),
     };
-  }, [i18n.language, i18n.resolvedLanguage, t]);
+  }, [pathname, t]);
 
   const handleToggle = useCallback(() => {
-    if (!nextLanguage) {
-      return;
-    }
-
-    void i18n.changeLanguage(nextLanguage);
-  }, [i18n, nextLanguage]);
+    navigate(`${nextPath}${hash}`);
+  }, [navigate, nextPath, hash]);
 
   const baseClassName =
     variant === 'navigation'
