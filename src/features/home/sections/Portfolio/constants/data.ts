@@ -113,10 +113,7 @@ export const portfolioItems: PortfolioItem[] = [
       'Minitestによる網羅的なテストカバレッジ',
       'Google OAuthによる外部認証',
     ],
-    ctas: [
-      { label: 'Live', href: externalLinks.projects.todoRails.live, type: 'live' },
-      { label: 'Repo', href: externalLinks.projects.todoRails.repo, type: 'repo' },
-    ],
+    ctas: [{ label: 'Repo', href: externalLinks.projects.todoRails.repo, type: 'repo' }],
     image: {
       src: todoAppSvg,
       alt: 'Rails で実装された Todo アプリ',

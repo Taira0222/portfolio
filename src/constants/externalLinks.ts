@@ -32,7 +32,6 @@ export const externalLinks = {
       repo: 'https://github.com/Taira0222/taira0222.github.io',
     },
     todoRails: {
-      live: 'https://todo-rails-application.onrender.com/',
       repo: 'https://github.com/Taira0222/todo-rails-application',
     },
     qiitaBlog: {
